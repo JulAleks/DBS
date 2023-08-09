@@ -1,0 +1,263 @@
+PEOPLE
+-------
+PersonID: 1001, FirstName: John, LastName: Smith, D.O.B: 1985-05-10, Email: john.smith@google.com, Address: 123 Main St, City: Toronto, PostalCode: M5V 2T6
+PersonID: 1002, FirstName: Jane, LastName: Doe, D.O.B: 1990-08-15, Email: jane.doe@hotmail.com, Address: 456 Oak Ave, City: Ottawa, PostalCode: K1P 5G4
+PersonID: 1003, FirstName: Michael, LastName: Johnson, D.O.B: 1978-12-03, Email: michael.johnson@google.com, Address: 789 Elm Rd, City: Hamilton, PostalCode: L8P 1H6
+PersonID: 1004, FirstName: Emily, LastName: Williams, D.O.B: 1989-07-22, Email: emily.williams@hotmail.com, Address: 101 Pine Ln, City: London, PostalCode: N6A 1R5
+PersonID: 1005, FirstName: Daniel, LastName: Brown, D.O.B: 1995-04-17, Email: daniel.brown@google.com, Address: 222 Maple Dr, City: Mississauga, PostalCode: L5B 4M7
+PersonID: 1006, FirstName: Sarah, LastName: Miller, D.O.B: 1982-09-28, Email: sarah.miller@hotmail.com, Address: 333 Birch St, City: Brampton, PostalCode: L6T 0E2
+PersonID: 1007, FirstName: William, LastName: Davis, D.O.B: 1992-02-08, Email: william.davis@google.com, Address: 444 Cedar Ave, City: Markham, PostalCode: L3R 8B7
+PersonID: 1008, FirstName: Olivia, LastName: Martinez, D.O.B: 1987-11-12, Email: olivia.martinez@hotmail.com, Address: 555 Willow Rd, City: Vaughan, PostalCode: L4J 7Y6
+PersonID: 1009, FirstName: James, LastName: Rodriguez, D.O.B: 1976-06-30, Email: james.rodriguez@google.com, Address: 666 Oak St, City: Richmond Hill, PostalCode: L4C 0L8
+PersonID: 1010, FirstName: Emma, LastName: Lee, D.O.B: 1998-03-25, Email: emma.lee@hotmail.com, Address: 777 Elm Ave, City: Oakville, PostalCode: L6H 6P9
+PersonID: 1011, FirstName: Alexander, LastName: Thompson, D.O.B: 1984-10-19, Email: alexander.thompson@google.com, Address: 888 Maple Ln, City: Burlington, PostalCode: L7R 2L8
+PersonID: 1012, FirstName: Mia, LastName: Scott, D.O.B: 1991-01-06, Email: mia.scott@hotmail.com, Address: 999 Pine Rd, City: Oshawa, PostalCode: L1H 7K5
+PersonID: 1013, FirstName: Benjamin, LastName: Hall, D.O.B: 1980-05-14, Email: benjamin.hall@google.com, Address: 111 Birch Dr, City: Whitby, PostalCode: L1N 8X1
+PersonID: 1014, FirstName: Amelia, LastName: Young, D.O.B: 1986-08-09, Email: amelia.young@hotmail.com, Address: 222 Oak St, City: Ajax, PostalCode: L1S 2V8
+PersonID: 1015, FirstName: Ethan, LastName: Lopez, D.O.B: 1997-07-11, Email: ethan.lopez@google.com, Address: 333 Maple Ave, City: Pickering, PostalCode: L1W 3T7
+PersonID: 1016, FirstName: Sofia, LastName: Adams, D.O.B: 1979-09-29, Email: sofia.adams@hotmail.com, Address: 444 Elm Rd, City: Milton, PostalCode: L9T 3N5
+PersonID: 1017, FirstName: Matthew, LastName: Lewis, D.O.B: 1993-02-14, Email: matthew.lewis@google.com, Address: 555 Cedar St, City: Newmarket, PostalCode: L3Y 1R6
+PersonID: 1018, FirstName: Ava, LastName: King, D.O.B: 1988-12-02, Email: ava.king@hotmail.com, Address: 666 Willow Ave, City: Aurora, PostalCode: L4G 3L8
+PersonID: 1019, FirstName: Alexander, LastName: Powell, D.O.B: 1977-06-25, Email: alexander.powell@google.com, Address: 777 Birch Dr, City: Ajax, PostalCode: L1S 2V8
+PersonID: 1020, FirstName: Charlotte, LastName: Turner, D.O.B: 1994-03-18, Email: charlotte.turner@hotmail.com, Address: 888 Oak St, City: Markham, PostalCode: L3R 8B7
+
+PHONES
+------
+Phone: 111-111-1111, PersonID: 1001, PreferredPhone: Home
+Phone: 222-222-2222, PersonID: 1002, PreferredPhone: Mobile
+Phone: 333-333-3333, PersonID: 1003, PreferredPhone: Home
+Phone: 444-444-4444, PersonID: 1004, PreferredPhone: Mobile
+Phone: 555-555-5555, PersonID: 1005, PreferredPhone: Mobile
+Phone: 666-666-6666, PersonID: 1006, PreferredPhone: Home
+Phone: 777-777-7777, PersonID: 1007, PreferredPhone: Home
+Phone: 888-888-8888, PersonID: 1008, PreferredPhone: Mobile
+Phone: 999-999-9999, PersonID: 1009, PreferredPhone: Mobile
+Phone: 101-010-1010, PersonID: 1010, PreferredPhone: Mobile
+Phone: 202-020-2020, PersonID: 1011, PreferredPhone: Home
+Phone: 303-030-3030, PersonID: 1012, PreferredPhone: Home
+Phone: 404-040-4040, PersonID: 1013, PreferredPhone: Mobile
+Phone: 505-050-5050, PersonID: 1014, PreferredPhone: Home
+Phone: 606-060-6060, PersonID: 1015, PreferredPhone: Mobile
+Phone: 707-070-7070, PersonID: 1016, PreferredPhone: Mobile
+Phone: 808-080-8080, PersonID: 1017, PreferredPhone: Home
+Phone: 909-090-9090, PersonID: 1018, PreferredPhone: Mobile
+Phone: 123-456-7890, PersonID: 1019, PreferredPhone: Home
+Phone: 987-654-3210, PersonID: 1020, PreferredPhone: Mobile
+
+PATIENTS
+-------
+PetID: 2001, PatientName: Max, AnimalType: Dog, Breed: Golden Retriever, D.O.V: 2019-03-15, Sex: Male, IsFixed: true, IsMicrochipped: false, MicrochipID: N/A, OwnerID: 1001
+PetID: 2002, PatientName: Bella, AnimalType: Cat, Breed: Siamese, D.O.V: 2020-05-10, Sex: Female, IsFixed: false, IsMicrochipped: true, MicrochipID: DEF456, OwnerID: 1002
+PetID: 2003, PatientName: Rocky, AnimalType: Dog, Breed: German Shepherd, D.O.V: 2018-12-20, Sex: Male, IsFixed: true, IsMicrochipped: true, MicrochipID: GHI789, OwnerID: 1003
+PetID: 2004, PatientName: Luna, AnimalType: Cat, Breed: Persian, D.O.V: 2019-08-05, Sex: Female, IsFixed: false, IsMicrochipped: false, MicrochipID: N/A, OwnerID: 1004
+PetID: 2005, PatientName: Cooper, AnimalType: Dog, Breed: Labrador Retriever, D.O.V: 2020-01-25, Sex: Male, IsFixed: true, IsMicrochipped: true, MicrochipID: MNO345, OwnerID: 1005
+PetID: 2006, PatientName: Simba, AnimalType: Cat, Breed: Maine Coon, D.O.V: 2017-06-12, Sex: Male, IsFixed: true, IsMicrochipped: false, MicrochipID: N/A, OwnerID: 1006
+PetID: 2007, PatientName: Daisy, AnimalType: Dog, Breed: Poodle, D.O.V: 2019-09-30, Sex: Female, IsFixed: true, IsMicrochipped: true, MicrochipID: STU901, OwnerID: 1007
+PetID: 2008, PatientName: Whiskers, AnimalType: Cat, Breed: British Shorthair, D.O.V: 2020-11-08, Sex: Male, IsFixed: true, IsMicrochipped: true, MicrochipID: VWX234, OwnerID: 1008
+PetID: 2009, PatientName: Buddy, AnimalType: Dog, Breed: Bulldog, D.O.V: 2016-07-17, Sex: Male, IsFixed: false, IsMicrochipped: true, MicrochipID: YZA567, OwnerID: 1009
+PetID: 2010, PatientName: Nala, AnimalType: Cat, Breed: Ragdoll, D.O.V: 2021-02-12, Sex: Female, IsFixed: true, IsMicrochipped: false, MicrochipID: N/A, OwnerID: 1010
+PetID: 2011, PatientName: Rocky, AnimalType: Dog, Breed: Boxer, D.O.V: 2018-10-03, Sex: Male, IsFixed: true, IsMicrochipped: true, MicrochipID: CDE901, OwnerID: 1011
+PetID: 2012, PatientName: Oliver, AnimalType: Cat, Breed: Sphynx, D.O.V: 2019-04-28, Sex: Male, IsFixed: true, IsMicrochipped: false, MicrochipID: N/A, OwnerID: 1012
+PetID: 2013, PatientName: Charlie, AnimalType: Dog, Breed: Beagle, D.O.V: 2020-06-15, Sex: Male, IsFixed: false, IsMicrochipped: true, MicrochipID: HIJ456, OwnerID: 1013
+PetID: 2014, PatientName: Luna, AnimalType: Cat, Breed: Scottish Fold, D.O.V: 2019-11-20, Sex: Female, IsFixed: true, IsMicrochipped: true, MicrochipID: KLM789, OwnerID: 1014
+PetID: 2015, PatientName: Bella, AnimalType: Dog, Breed: Shih Tzu, D.O.V: 2017-12-05, Sex: Female, IsFixed: false, IsMicrochipped: false, MicrochipID: N/A, OwnerID: 1015
+
+EMPLOYEES
+---------
+EmployeeID: 1016, SIN: 123456789, Position: Vet, Username: vet_john, Password: vet@john2023, CurrentHourlyRate: 50.00
+EmployeeID: 1017, SIN: 987654321, Position: Groomer, Username: groomer_jane, Password: groom@jane2023, CurrentHourlyRate: 25.00
+EmployeeID: 1018, SIN: 456789123, Position: Receptionist, Username: reception_mary, Password: recpt@mary2023, CurrentHourlyRate: 20.00
+EmployeeID: 1019, SIN: 789123456, Position: Vet Technician, Username: tech_michael, Password: tech@michael2023, CurrentHourlyRate: 30.00
+EmployeeID: 1020, SIN: 654321789, Position: Vet Technician, Username: tech_sarah, Password: tech@sarah2023, CurrentHourlyRate: 30.00
+EmployeeID: 1021, SIN: 321789654, Position: Vet Technician, Username: tech_david, Password: tech@david2023, CurrentHourlyRate: 30.00
+
+VETS
+-----
+dvmID: 1016, VetLicence: LIC-VET-01
+
+MEDICATION
+---------
+MEDID: 2001, MedName: Rimadyl, MedClass: Non-Steroidal Anti-Inflammatory Drug (NSAID), MedType: Tablet, Brand: Zoetis, BuyPrice: $15.50
+MEDID: 2002, MedName: Apoquel, MedClass: Anti-Pruritic (Anti-Itch), MedType: Tablet, Brand: Zoetis, BuyPrice: $25.75
+MEDID: 2003, MedName: Revolution, MedClass: Antiparasitic, MedType: Topical, Brand: Zoetis, BuyPrice: $19.99
+MEDID: 2004, MedName: Tramadol, MedClass: Opioid Pain Reliever, MedType: Tablet, Brand: Various, BuyPrice: $10.20
+MEDID: 2005, MedName: Acepromazine, MedClass: Sedative, MedType: Tablet, Brand: Various, BuyPrice: $12.30
+MEDID: 2006, MedName: Baytril, MedClass: Antibiotic, MedType: Tablet, Brand: Bayer, BuyPrice: $9.99
+MEDID: 2007, MedName: Prednisone, MedClass: Steroid, MedType: Tablet, Brand: Various, BuyPrice: $8.80
+MEDID: 2008, MedName: Frontline Plus, MedClass: Antiparasitic, MedType: Topical, Brand: Merial, BuyPrice: $22.95
+MEDID: 2009, MedName: Meloxicam, MedClass: Non-Steroidal Anti-Inflammatory Drug (NSAID), MedType: Tablet, Brand: Various, BuyPrice: $13.75
+MEDID: 2010, MedName: Valium, MedClass: Sedative, MedType: Tablet, Brand: Various, BuyPrice: $18.50
+MEDID: 2011, MedName: Clavamox, MedClass: Antibiotic, MedType: Tablet, Brand: Zoetis, BuyPrice: $17.20
+MEDID: 2012, MedName: Cerenia, MedClass: Antiemetic, MedType: Tablet, Brand: Zoetis, BuyPrice: $21.90
+MEDID: 2013, MedName: Heartgard Plus, MedClass: Heartworm Preventative, MedType: Chewable, Brand: Merial, BuyPrice: $16.35
+MEDID: 2014, MedName: Ciprofloxacin, MedClass: Antibiotic, MedType: Tablet, Brand: Various, BuyPrice: $14.50
+MEDID: 2015, MedName: Zylkene, MedClass: Behavior Supplement, MedType: Capsule, Brand: Vetoquinol, BuyPrice: $27.70
+
+PRESCRIPTIONS
+-------------
+PrescriptionID: 3001, PrescriptionDateAndTime: 2023-08-05 10:30 AM, PatientID: 1001
+PrescriptionID: 3002, PrescriptionDateAndTime: 2023-08-06 2:15 PM, PatientID: 1005
+PrescriptionID: 3003, PrescriptionDateAndTime: 2023-08-07 11:00 AM, PatientID: 1010
+PrescriptionID: 3004, PrescriptionDateAndTime: 2023-08-08 3:45 PM, PatientID: 1002
+PrescriptionID: 3005, PrescriptionDateAndTime: 2023-08-09 9:00 AM, PatientID: 1012
+PrescriptionID: 3006, PrescriptionDateAndTime: 2023-08-10 12:30 PM, PatientID: 1008
+PrescriptionID: 3007, PrescriptionDateAndTime: 2023-08-11 5:20 PM, PatientID: 1003
+PrescriptionID: 3008, PrescriptionDateAndTime: 2023-08-12 1:40 PM, PatientID: 1014
+PrescriptionID: 3009, PrescriptionDateAndTime: 2023-08-13 4:10 PM, PatientID: 1015
+PrescriptionID: 3010, PrescriptionDateAndTime: 2023-08-14 10:00 AM, PatientID: 1009
+PrescriptionID: 3011, PrescriptionDateAndTime: 2023-08-15 3:00 PM, PatientID: 1016
+PrescriptionID: 3012, PrescriptionDateAndTime: 2023-08-16 11:30 AM, PatientID: 1018
+PrescriptionID: 3013, PrescriptionDateAndTime: 2023-08-17 2:45 PM, PatientID: 1019
+PrescriptionID: 3014, PrescriptionDateAndTime: 2023-08-18 9:45 AM, PatientID: 1013
+PrescriptionID: 3015, PrescriptionDateAndTime: 2023-08-19 4:50 PM, PatientID: 1006
+
+PRESCRIPTION DETAILES
+---------------------
+PrescriptionID: 3001, MedID: 2001, Notes: Take 1 tablet three times a day after meals.
+PrescriptionID: 3001, MedID: 2004, Notes: Take 1 capsule twice a day as needed for pain relief.
+PrescriptionID: 3002, MedID: 2005, Notes: Administer 1 tablet in the morning for anxiety.
+PrescriptionID: 3002, MedID: 2008, Notes: Apply 1 topical solution once a month for flea and tick prevention.
+PrescriptionID: 3003, MedID: 2009, Notes: Give 1 tablet daily for joint pain.
+PrescriptionID: 3003, MedID: 2010, Notes: Administer 1 injection before travel to help with motion sickness.
+PrescriptionID: 3004, MedID: 2002, Notes: Take 1 tablet twice a day for itch relief.
+PrescriptionID: 3004, MedID: 2012, Notes: Give 1 tablet as needed for vomiting or nausea.
+PrescriptionID: 3005, MedID: 2006, Notes: Give 1 tablet twice a day for bacterial infection.
+PrescriptionID: 3005, MedID: 2015, Notes: Administer 1 capsule daily for calming effect.
+PrescriptionID: 3006, MedID: 2007, Notes: Take 1 tablet in the morning and 1 tablet in the evening for inflammation.
+PrescriptionID: 3007, MedID: 2003, Notes: Apply 1 topical solution once a month for heartworm and parasite prevention.
+PrescriptionID: 3008, MedID: 2001, Notes: Take 1 tablet three times a day after meals.
+PrescriptionID: 3009, MedID: 2004, Notes: Take 1 capsule twice a day as needed for pain relief.
+PrescriptionID: 3010, MedID: 2010, Notes: Administer 1 injection before travel to help with motion sickness.
+
+PROCEDURES
+----------
+ProcedureID: 4001, ProcedureName: Dental Cleaning, EmployeeID: 1016, ServicePrice: $150.00
+ProcedureID: 4002, ProcedureName: Vaccination, EmployeeID: 1016, ServicePrice: $80.00
+ProcedureID: 4003, ProcedureName: Spay, EmployeeID: 1016, ServicePrice: $900.00
+ProcedureID: 4004, ProcedureName: Neuter, EmployeeID: 1016, ServicePrice: $1000.00
+ProcedureID: 4005, ProcedureName: Nail Trim, EmployeeID: 1017, ServicePrice: $20.00
+ProcedureID: 4006, ProcedureName: Bath and Brush, EmployeeID: 1017, ServicePrice: $30.00
+ProcedureID: 4007, ProcedureName: Grooming, EmployeeID: 1017, ServicePrice: $50.00
+ProcedureID: 4008, ProcedureName: X-ray, EmployeeID: 1019, ServicePrice: $120.00
+ProcedureID: 4009, ProcedureName: Blood Test, EmployeeID: 1019, ServicePrice: $80.00
+ProcedureID: 4010, ProcedureName: Ultrasound, EmployeeID: 1016, ServicePrice: $180.00
+ProcedureID: 4011, ProcedureName: Microchipping, EmployeeID: 1016, ServicePrice: $35.00
+ProcedureID: 4012, ProcedureName: Eye Examination, EmployeeID: 1016, ServicePrice: $60.00
+ProcedureID: 4013, ProcedureName: Dental Extraction, EmployeeID: 1016, ServicePrice: $180.00
+ProcedureID: 4014, ProcedureName: Physical Examination, EmployeeID: 1016, ServicePrice: $40.00
+ProcedureID: 4015, ProcedureName: Wound Dressing, EmployeeID: 1019, ServicePrice: $25.00
+ProcedureID: 4016, ProcedureName: Allergy Testing, EmployeeID: 1016, ServicePrice: $100.00
+ProcedureID: 4017, ProcedureName: Anal Gland Expression, EmployeeID: 1017, ServicePrice: $30.00
+ProcedureID: 4018, ProcedureName: Fecal Examination, EmployeeID: 1019, ServicePrice: $15.00
+ProcedureID: 4019, ProcedureName: Heartworm Test, EmployeeID: 1016, ServicePrice: $40.00
+ProcedureID: 4020, ProcedureName: Ear Cleaning, EmployeeID: 1017, ServicePrice: $25.00
+ProcedureID: 4021, ProcedureName: Annual Exam Gold Package, EmployeeID: 1016, ServicePrice: $500.00
+ProcedureID: 4022, ProcedureName: Annual Exam Silver Package, EmployeeID: 1016, ServicePrice: $300.00
+ProcedureID: 4023, ProcedureName: Puppy Initial Visit, EmployeeID: 1016, ServicePrice: $120.00
+ProcedureID: 4024, ProcedureName: Puppy Second Visit, EmployeeID: 1016, ServicePrice: $100.00
+
+APPOINTMENTS
+---------------
+AppointmentID: 5001, ApptDateTime: 2023-09-06 10:00 AM, PatientID: 1004
+AppointmentID: 5002, ApptDateTime: 2023-09-07 2:30 PM, PatientID: 1007
+AppointmentID: 5003, ApptDateTime: 2023-09-08 11:15 AM, PatientID: 1011
+AppointmentID: 5004, ApptDateTime: 2023-09-09 3:45 PM, PatientID: 1017
+AppointmentID: 5005, ApptDateTime: 2023-09-10 9:30 AM, PatientID: 1013
+AppointmentID: 5006, ApptDateTime: 2023-09-11 12:00 PM, PatientID: 1006
+AppointmentID: 5007, ApptDateTime: 2023-09-12 4:20 PM, PatientID: 1009
+AppointmentID: 5008, ApptDateTime: 2023-09-13 1:30 PM, PatientID: 1014
+AppointmentID: 5009, ApptDateTime: 2023-09-14 3:10 PM, PatientID: 1012
+AppointmentID: 5010, ApptDateTime: 2023-09-15 10:30 AM, PatientID: 1008
+AppointmentID: 5011, ApptDateTime: 2023-09-16 2:00 PM, PatientID: 1019
+AppointmentID: 5012, ApptDateTime: 2023-09-17 11:30 AM, PatientID: 1003
+AppointmentID: 5013, ApptDateTime: 2023-09-18 2:45 PM, PatientID: 1010
+AppointmentID: 5014, ApptDateTime: 2023-09-19 9:45 AM, PatientID: 1002
+AppointmentID: 5015, ApptDateTime: 2023-09-20 4:50 PM, PatientID: 1005
+AppointmentID: 5016, ApptDateTime: 2023-09-21 1:00 PM, PatientID: 1001
+AppointmentID: 5017, ApptDateTime: 2023-09-22 3:20 PM, PatientID: 1015
+AppointmentID: 5018, ApptDateTime: 2023-09-23 12:45 PM, PatientID: 1016
+AppointmentID: 5019, ApptDateTime: 2023-09-24 2:30 PM, PatientID: 1006
+AppointmentID: 5020, ApptDateTime: 2023-09-25 11:15 AM, PatientID: 1013
+
+APPOINTMENT DETAILS
+--------------------
+AppointmentID: 5001, ApptDateTime: 2023-09-06 10:00 AM, ProcedureID: 4001, Reason: Follow-up
+AppointmentID: 5002, ApptDateTime: 2023-09-07 2:30 PM, ProcedureID: 4012, Reason: Emergency
+AppointmentID: 5003, ApptDateTime: 2023-09-08 11:15 AM, ProcedureID: 4002, Reason: Follow-up
+AppointmentID: 5004, ApptDateTime: 2023-09-09 3:45 PM, ProcedureID: 4005, Reason:
+AppointmentID: 5005, ApptDateTime: 2023-09-10 9:30 AM, ProcedureID: 4003, Reason: Follow-up
+AppointmentID: 5006, ApptDateTime: 2023-09-11 12:00 PM, ProcedureID: 4006, Reason:
+AppointmentID: 5007, ApptDateTime: 2023-09-12 4:20 PM, ProcedureID: 4007, Reason:
+AppointmentID: 5008, ApptDateTime: 2023-09-13 1:30 PM, ProcedureID: 4008, Reason: Follow-up
+AppointmentID: 5009, ApptDateTime: 2023-09-14 3:10 PM, ProcedureID: 4009, Reason: Emergency
+AppointmentID: 5010, ApptDateTime: 2023-09-15 10:30 AM, ProcedureID: 4010, Reason:
+AppointmentID: 5011, ApptDateTime: 2023-09-16 2:00 PM, ProcedureID: 4013, Reason: Follow-up
+AppointmentID: 5012, ApptDateTime: 2023-09-17 11:30 AM, ProcedureID: 4015, Reason:
+AppointmentID: 5013, ApptDateTime: 2023-09-18 2:45 PM, ProcedureID: 4017, Reason: Follow-up
+AppointmentID: 5014, ApptDateTime: 2023-09-19 9:45 AM, ProcedureID: 4020, Reason:
+AppointmentID: 5015, ApptDateTime: 2023-09-20 4:50 PM, ProcedureID: 4018, Reason: Emergency
+AppointmentID: 5016, ApptDateTime: 2023-09-21 1:00 PM, ProcedureID: 4011, Reason: Follow-up
+AppointmentID: 5017, ApptDateTime: 2023-09-22 3:20 PM, ProcedureID: 4016, Reason:
+AppointmentID: 5018, ApptDateTime: 2023-09-23 12:45 PM, ProcedureID: 4021, Reason:
+AppointmentID: 5019, ApptDateTime: 2023-09-24 2:30 PM, ProcedureID: 4023, Reason: Follow-up
+AppointmentID: 5020, ApptDateTime: 2023-09-25 11:15 AM, ProcedureID: 4024, Reason: Emergency
+
+INVOICE
+------------
+InvoiceID: 6001, PatientID: 1004, InvoiceDateTime: 2023-09-06 11:30 AM
+InvoiceID: 6002, PatientID: 1007, InvoiceDateTime: 2023-09-07 3:00 PM
+InvoiceID: 6003, PatientID: 1011, InvoiceDateTime: 2023-09-08 1:15 PM
+InvoiceID: 6004, PatientID: 1017, InvoiceDateTime: 2023-09-09 4:00 PM
+InvoiceID: 6005, PatientID: 1013, InvoiceDateTime: 2023-09-10 10:45 AM
+InvoiceID: 6006, PatientID: 1006, InvoiceDateTime: 2023-09-11 1:45 PM
+InvoiceID: 6007, PatientID: 1009, InvoiceDateTime: 2023-09-12 5:30 PM
+InvoiceID: 6008, PatientID: 1014, InvoiceDateTime: 2023-09-13 2:20 PM
+InvoiceID: 6009, PatientID: 1012, InvoiceDateTime: 2023-09-14 3:50 PM
+InvoiceID: 6010, PatientID: 1008, InvoiceDateTime: 2023-09-15 11:00 AM
+InvoiceID: 6011, PatientID: 1019, InvoiceDateTime: 2023-09-16 2:45 PM
+InvoiceID: 6012, PatientID: 1003, InvoiceDateTime: 2023-09-17 12:30 PM
+InvoiceID: 6013, PatientID: 1010, InvoiceDateTime: 2023-09-18 3:15 PM
+InvoiceID: 6014, PatientID: 1002, InvoiceDateTime: 2023-09-19 10:30 AM
+InvoiceID: 6015, PatientID: 1005, InvoiceDateTime: 2023-09-20 5:00 PM
+InvoiceID: 6016, PatientID: 1001, InvoiceDateTime: 2023-09-21 1:30 PM
+InvoiceID: 6017, PatientID: 1015, InvoiceDateTime: 2023-09-22 3:45 PM
+InvoiceID: 6018, PatientID: 1016, InvoiceDateTime: 2023-09-23 1:00 PM
+InvoiceID: 6019, PatientID: 1006, InvoiceDateTime: 2023-09-24 2:45 PM
+InvoiceID: 6020, PatientID: 1013, InvoiceDateTime: 2023-09-25 11:30 AM
+
+INVOICE DETAILES
+----------------
+LineNumber: 1, InvoiceID: 6001, ProcedureID: 4001, MedID: null, PricePaid: $150.00
+LineNumber: 2, InvoiceID: 6001, ProcedureID: 4012, MedID: null, PricePaid: $120.00
+LineNumber: 1, InvoiceID: 6002, ProcedureID: 4002, MedID: null, PricePaid: $45.00
+LineNumber: 1, InvoiceID: 6003, ProcedureID: 4005, MedID: null, PricePaid: $20.00
+LineNumber: 2, InvoiceID: 6003, ProcedureID: 4003, MedID: null, PricePaid: $250.00
+LineNumber: 3, InvoiceID: 6003, ProcedureID: 4006, MedID: null, PricePaid: $30.00
+LineNumber: 1, InvoiceID: 6004, ProcedureID: 4007, MedID: null, PricePaid: $50.00
+LineNumber: 1, InvoiceID: 6005, ProcedureID: 4008, MedID: null, PricePaid: $120.00
+LineNumber: 2, InvoiceID: 6005, ProcedureID: 4009, MedID: null, PricePaid: $80.00
+LineNumber: 3, InvoiceID: 6005, ProcedureID: 4010, MedID: null, PricePaid: $180.00
+LineNumber: 1, InvoiceID: 6006, ProcedureID: 4013, MedID: null, PricePaid: $35.00
+LineNumber: 1, InvoiceID: 6007, ProcedureID: null, MedID: 1001, PricePaid: $25.00
+LineNumber: 1, InvoiceID: 6008, ProcedureID: null, MedID: 1002, PricePaid: $30.00
+LineNumber: 2, InvoiceID: 6008, ProcedureID: 4015, MedID: null, PricePaid: $25.00
+LineNumber: 1, InvoiceID: 6009, ProcedureID: null, MedID: 1003, PricePaid: $25.00
+LineNumber: 1, InvoiceID: 6010, ProcedureID: 4011, MedID: null, PricePaid: $60.00
+LineNumber: 1, InvoiceID: 6011, ProcedureID: 4004, MedID: null, PricePaid: $200.00
+LineNumber: 2, InvoiceID: 6011, ProcedureID: 4018, MedID: null, PricePaid: $15.00
+LineNumber: 1, InvoiceID: 6012, ProcedureID: 4021, MedID: null, PricePaid: $300.00
+LineNumber: 1, InvoiceID: 6014, ProcedureID: null, MedID: 1004, PricePaid: $120.00
+LineNumber: 1, InvoiceID: 6013, ProcedureID: null, MedID: 1004, PricePaid: $120.00
+LineNumber: 1, InvoiceID: 6014, ProcedureID: 4008, MedID: null, PricePaid: $120.00
+LineNumber: 2, InvoiceID: 6014, ProcedureID: 4009, MedID: null, PricePaid: $80.00
+LineNumber: 3, InvoiceID: 6014, ProcedureID: 4010, MedID: null, PricePaid: $180.00
+LineNumber: 1, InvoiceID: 6015, ProcedureID: 4001, MedID: null, PricePaid: $150.00
+LineNumber: 2, InvoiceID: 6015, ProcedureID: 4012, MedID: null, PricePaid: $120.00
+LineNumber: 1, InvoiceID: 6016, ProcedureID: 4008, MedID: null, PricePaid: $120.00
+LineNumber: 2, InvoiceID: 6016, ProcedureID: 4009, MedID: null, PricePaid: $80.00
+LineNumber: 3, InvoiceID: 6016, ProcedureID: 4010, MedID: null, PricePaid: $180.00
+LineNumber: 1, InvoiceID: 6017, ProcedureID: 4013, MedID: null, PricePaid: $35.00
+LineNumber: 1, InvoiceID: 6018, ProcedureID: null, MedID: 1001, PricePaid: $25.00
+LineNumber: 1, InvoiceID: 6019, ProcedureID: null, MedID: 1002, PricePaid: $30.00
+LineNumber: 1, InvoiceID: 6020, ProcedureID: 4008, MedID: null, PricePaid: $120.00
+LineNumber: 2, InvoiceID: 6020, ProcedureID: 4009, MedID: null, PricePaid: $80.00
