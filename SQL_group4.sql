@@ -14,37 +14,37 @@ Harsh Pahurkar, 115587222
 
 
 --To be deleted
-DROP TABLE xPrescriptionDetails CASCADE CONSTRAINTS;
-DROP TABLE xPrescriptions CASCADE CONSTRAINTS;
-DROP TABLE xMedications CASCADE CONSTRAINTS;
-DROP TABLE xVeterinarians CASCADE CONSTRAINTS;
-DROP TABLE xEmployees CASCADE CONSTRAINTS;
-DROP TABLE xPatients CASCADE CONSTRAINTS;
-DROP TABLE xAppointmentsDetails CASCADE CONSTRAINTS;
-DROP TABLE xAppointments CASCADE CONSTRAINTS;
-DROP TABLE xInvoiceDetails CASCADE CONSTRAINTS;
-DROP TABLE xInvoices CASCADE CONSTRAINTS;
-DROP TABLE xPhones CASCADE CONSTRAINTS;
-DROP TABLE xPeople CASCADE CONSTRAINTS;
-DROP TABLE xProcedures CASCADE CONSTRAINTS;
+DROP TABLE xPrescriptionDetails     CASCADE CONSTRAINTS;
+DROP TABLE xPrescriptions           CASCADE CONSTRAINTS;
+DROP TABLE xMedications             CASCADE CONSTRAINTS;
+DROP TABLE xVeterinarians           CASCADE CONSTRAINTS;
+DROP TABLE xEmployees               CASCADE CONSTRAINTS;
+DROP TABLE xPatients                CASCADE CONSTRAINTS;
+DROP TABLE xAppointmentsDetails     CASCADE CONSTRAINTS;
+DROP TABLE xAppointments            CASCADE CONSTRAINTS;
+DROP TABLE xInvoiceDetails          CASCADE CONSTRAINTS;
+DROP TABLE xInvoices                CASCADE CONSTRAINTS;
+DROP TABLE xPhones                  CASCADE CONSTRAINTS;
+DROP TABLE xPeople                  CASCADE CONSTRAINTS;
+DROP TABLE xProcedures              CASCADE CONSTRAINTS;
 
 CREATE TABLE xPeople (
-    personId NUMBER(4) PRIMARY KEY,
-    lastName VARCHAR(25) NOT NULL,
-    firstName VARCHAR(25) NOT NULL,
-    dob DATE NOT NULL,
-    email VARCHAR(100), 
-    address VARCHAR(200) NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    prov CHAR(2) DEFAULT 'ON' NOT NULL,
-    postalCode VARCHAR(8) NOT NULL
+    personId        NUMBER(4)                       PRIMARY KEY,
+    lastName        VARCHAR(25)                     NOT NULL,
+    firstName       VARCHAR(25)                     NOT NULL,
+    dob             DATE                            NOT NULL,
+    email           VARCHAR(100), 
+    address         VARCHAR(200)                    NOT NULL,
+    city            VARCHAR(50)                     NOT NULL,
+    prov            CHAR(2)         DEFAULT 'ON'    NOT NULL,
+    postalCode      VARCHAR(8)                      NOT NULL
 );
 
 
 CREATE TABLE xPhones (
-    phoneNum VARCHAR2(12),
-    personId NUMBER(4),
-    phoneType VARCHAR2(13),
+    phoneNum        VARCHAR2(12),
+    personId        NUMBER(4),
+    phoneType       VARCHAR2(13),
     PRIMARY KEY (phoneNum, personId),
     FOREIGN KEY (personId) REFERENCES xPeople(personId)
 );
@@ -52,107 +52,109 @@ CREATE TABLE xPhones (
 
 
 CREATE TABLE xPatients (
-    patientId NUMBER(4) PRIMARY KEY,
-    patientName VARCHAR2(50) NOT NULL,
-    animalType VARCHAR2(10) NOT NULL,
-    breed VARCHAR2(50) NOT NULL,
-    dob DATE NOT NULL,
-    sex VARCHAR2(2) NOT NULL,
-    isFixed CHAR(1) NOT NULL CHECK (isFixed IN ('Y', 'N')),
-    isMicrochipped CHAR(1) NOT NULL CHECK (isMicrochipped IN ('Y', 'N')),
-    microchip VARCHAR2(20),
-    prov CHAR(2) DEFAULT 'ON',
-    ownerId NUMBER(4),
+    patientId       NUMBER(4)       PRIMARY KEY,
+    patientName     VARCHAR2(50)    NOT NULL,
+    animalType      VARCHAR2(10)    NOT NULL,
+    breed           VARCHAR2(50)    NOT NULL,
+    dob             DATE            NOT NULL,
+    sex             VARCHAR2(2)     NOT NULL,
+    isFixed         CHAR(1)         NOT NULL CHECK (isFixed IN ('Y', 'N')),
+    isMicrochipped  CHAR(1)         NOT NULL CHECK (isMicrochipped IN ('Y', 'N')),
+    microchip       VARCHAR2(20),
+    prov            CHAR(2)         DEFAULT 'ON',
+    ownerId         NUMBER(4)       NOT NULL,
     CONSTRAINT fk_owner FOREIGN KEY (ownerId) REFERENCES xPeople(personId)
 );
 
 
 
 CREATE TABLE xEmployees (
-    employeeId NUMBER(4) PRIMARY KEY,
-    sin VARCHAR(50) NOT NULL,
-    userName VARCHAR(15),
-    userPassword VARCHAR(15),
-    empPosition VARCHAR(50) NOT NULL,
-    currentHourlyPay DECIMAL NOT NULL,
+    employeeId          NUMBER(4)       PRIMARY KEY,
+    sin                 VARCHAR(50)     NOT NULL,
+    userName            VARCHAR(15),
+    userPassword        VARCHAR(15),
+    empPosition         VARCHAR(50)     NOT NULL,
+    currentHourlyPay    DECIMAL(5,2)    NOT NULL,
     FOREIGN KEY (employeeId) REFERENCES xPeople(personId)
 );
 
 
 CREATE TABLE xVeterinarians (
-    dvmId NUMBER(4) PRIMARY KEY,
-    dvmLicence VARCHAR(10) NOT NULL,
+    dvmId               NUMBER(4)        PRIMARY KEY,
+    dvmLicence          CHAR(10)            NOT NULL,
     FOREIGN KEY (dvmId) REFERENCES xEmployees(employeeId)
 );
 
 CREATE TABLE xProcedures (
-    procedureId NUMBER(4) PRIMARY KEY,
-    procedureName VARCHAR2(50) NOT NULL,
-    employeeId NUMBER(4),
-    currentServiceRate NUMBER(8, 2) NOT NULL,
+    procedureId         NUMBER(3)           PRIMARY KEY,
+    procedureName       VARCHAR2(50)        NOT NULL,
+    employeeId          NUMBER(4)        NOT NULL,      
+    currentServiceRate  DECIMAL(8, 2)       NOT NULL,
     FOREIGN KEY (employeeId) REFERENCES xEmployees(employeeId)
 );
 
 CREATE TABLE xAppointments (
-    appointmentId NUMBER(4) PRIMARY KEY,
-    apptDateTime TIMESTAMP,
-    patientId NUMBER,
+    appointmentId       NUMBER(4)           PRIMARY KEY,
+    apptDateTime        TIMESTAMP,
+    patientId           NUMBER(4),
     FOREIGN KEY (patientId) REFERENCES xPatients(patientId)
 );
 
 CREATE TABLE xAppointmentsDetails (
-    appointmentDateTime DATE,
-    procedureId NUMBER(4),
+    appointmentDateTime     DATE,
+    procedureId             NUMBER(3)       NOT NULL,
+    reasonForAppointment    VARCHAR(100),
     PRIMARY KEY (appointmentDateTime, procedureId),
     FOREIGN KEY (procedureId) REFERENCES xProcedures(procedureId)
 );
 
 
 CREATE TABLE xMedications (
-    medId NUMBER(5) PRIMARY KEY,
-    medName VARCHAR(100) NOT NULL,
-    medClass VARCHAR(50) NOT NULL,
-    medType VARCHAR(50) NOT NULL,
-    brand VARCHAR(35) NOT NULL,
-    buyPrice DECIMAL NOT NULL
+    medId               NUMBER(5)       PRIMARY KEY,
+    medName             VARCHAR(100)    NOT NULL,
+    medClass            VARCHAR(50)     NOT NULL,
+    medType             VARCHAR(50)     NOT NULL,
+    brand               VARCHAR(35)     NOT NULL,
+    buyPrice            DECIMAL(5,2)    NOT NULL
 );
 
 
 CREATE TABLE xPrescriptions (
-    prescriptionId NUMBER(5)PRIMARY KEY,
-    appointmentDateTime DATE NOT NULL,
-    patientId NUMBER(4),
-    dvmId NUMBER(4),
+    prescriptionId      NUMBER(5)       PRIMARY KEY,
+    appointmentDateTime DATE            NOT NULL,
+    patientId           NUMBER(4)       NOT NULL,
+    dvmId               NUMBER(4)       NOT NULL,
     FOREIGN KEY (patientId) REFERENCES xPatients(patientId),
-    FOREIGN KEY (dvmId) REFERENCES xVeterinarians(dvmId)
+    FOREIGN KEY (dvmId)     REFERENCES xVeterinarians(dvmId)
 );
 
 
 CREATE TABLE xPrescriptionDetails (
-    prescriptionId NUMBER(5),
-    medId NUMBER(5),
-    notes VARCHAR(100) NOT NULL,
-    FOREIGN KEY (prescriptionId) REFERENCES xPrescriptions(prescriptionId),
-    FOREIGN KEY (medId) REFERENCES xMedications(medId)
+    prescriptionId      NUMBER(5),
+    medId               NUMBER(5),
+    notes               VARCHAR(100)    NOT NULL,
+    PRIMARY KEY (prescriptionId, medId),
+    FOREIGN KEY (prescriptionId)        REFERENCES xPrescriptions(prescriptionId),
+    FOREIGN KEY (medId)                 REFERENCES xMedications(medId)
 );
 
 
 CREATE TABLE xInvoices (
-    invoiceId NUMBER(5) PRIMARY KEY,
-    patientId NUMBER(4),
-    dateAndTime DATE NOT NULL,
+    invoiceId           NUMBER(5)       PRIMARY KEY,
+    patientId           NUMBER(4)       NOT NULL,
+    dateAndTime         DATE            NOT NULL,
     FOREIGN KEY (patientId) REFERENCES xPatients(patientId)
 );
 
 CREATE TABLE xInvoiceDetails (
-    lineNumber NUMBER(2),
-    invoiceId NUMBER(5),
+    lineNumber          NUMBER(2),
+    invoiceId           NUMBER(5),
+    procedureId         NUMBER(3),
+    medicationId        NUMBER(5),
+    pricePaid           DECIMAL(8, 2)   NOT NULL, 
     PRIMARY KEY (lineNumber, invoiceId),
-    procedureId NUMBER(4),
-    medicationId NUMBER(5),
-    pricePaid NUMBER(8, 2) NOT NULL, 
-    FOREIGN KEY (invoiceId) REFERENCES xInvoices(invoiceId),
-    FOREIGN KEY (medicationId) REFERENCES xMedications(medId)
+    FOREIGN KEY (invoiceId)     REFERENCES xInvoices(invoiceId),
+    FOREIGN KEY (medicationId)  REFERENCES xMedications(medId)
 ); 
 
 
