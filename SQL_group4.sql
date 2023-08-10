@@ -13,6 +13,20 @@ Harsh Pahurkar, 115587222
 ********************************************/
 
 
+--To be deleted
+DROP TABLE xPrescriptionDetails CASCADE CONSTRAINTS;
+DROP TABLE xPrescriptions CASCADE CONSTRAINTS;
+DROP TABLE xMedications CASCADE CONSTRAINTS;
+DROP TABLE xVeterinarians CASCADE CONSTRAINTS;
+DROP TABLE xEmployees CASCADE CONSTRAINTS;
+DROP TABLE xPatients CASCADE CONSTRAINTS;
+DROP TABLE xAppointmentsDetails CASCADE CONSTRAINTS;
+DROP TABLE xAppointments CASCADE CONSTRAINTS;
+DROP TABLE xInvoiceDetails CASCADE CONSTRAINTS;
+DROP TABLE xInvoices CASCADE CONSTRAINTS;
+DROP TABLE xPhones CASCADE CONSTRAINTS;
+DROP TABLE xPeople CASCADE CONSTRAINTS;
+DROP TABLE xProcedures CASCADE CONSTRAINTS;
 
 CREATE TABLE xPeople (
     personId NUMBER(4) PRIMARY KEY,
@@ -298,38 +312,40 @@ INSERT ALL
     VALUES (2014, 'Ciprofloxacin', 'Antibiotic', 'Tablet', 'Cipro', 14.50)
 SELECT * FROM dual;
 
+
 INSERT ALL
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3001, TO_DATE('2023-08-05 10:30 AM', 'YYYY-MM-DD HH:MI AM'), 1001, 1016)
+    VALUES (3001, TO_DATE('2023-08-05 10:30 AM', 'YYYY-MM-DD HH:MI AM'), 2001, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3002, TO_DATE('2023-08-06 2:15 PM', 'YYYY-MM-DD HH:MI AM'), 1005, 1016)
+    VALUES (3002, TO_DATE('2023-08-06 2:15 PM', 'YYYY-MM-DD HH:MI AM'), 2005, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3003, TO_DATE('2023-08-07 11:00 AM', 'YYYY-MM-DD HH:MI AM'), 1010, 1016)
+    VALUES (3003, TO_DATE('2023-08-07 11:00 AM', 'YYYY-MM-DD HH:MI AM'), 2010, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3004, TO_DATE('2023-08-08 3:45 PM', 'YYYY-MM-DD HH:MI AM'), 1002, 1016)
+    VALUES (3004, TO_DATE('2023-08-08 3:45 PM', 'YYYY-MM-DD HH:MI AM'), 2002, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3005, TO_DATE('2023-08-09 9:00 AM', 'YYYY-MM-DD HH:MI AM'), 1012, 1016)
+    VALUES (3005, TO_DATE('2023-08-09 9:00 AM', 'YYYY-MM-DD HH:MI AM'), 2012, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3006, TO_DATE('2023-08-10 12:30 PM', 'YYYY-MM-DD HH:MI AM'), 1008, 1016)
+    VALUES (3006, TO_DATE('2023-08-10 12:30 PM', 'YYYY-MM-DD HH:MI AM'), 2008, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3007, TO_DATE('2023-08-11 5:20 PM', 'YYYY-MM-DD HH:MI AM'), 1003, 1016)
+    VALUES (3007, TO_DATE('2023-08-11 5:20 PM', 'YYYY-MM-DD HH:MI AM'), 2003, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3008, TO_DATE('2023-08-12 1:40 PM', 'YYYY-MM-DD HH:MI AM'), 1014, 1016)
+    VALUES (3008, TO_DATE('2023-08-12 1:40 PM', 'YYYY-MM-DD HH:MI AM'), 2014, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3009, TO_DATE('2023-08-13 4:10 PM', 'YYYY-MM-DD HH:MI AM'), 1015, 1016)
+    VALUES (3009, TO_DATE('2023-08-13 4:10 PM', 'YYYY-MM-DD HH:MI AM'), 2015, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3010, TO_DATE('2023-08-14 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 1009, 1016)
+    VALUES (3010, TO_DATE('2023-08-14 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 2009, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3011, TO_DATE('2023-08-15 3:00 PM', 'YYYY-MM-DD HH:MI AM'), 1016, 1016)
+    VALUES (3011, TO_DATE('2023-08-15 3:00 PM', 'YYYY-MM-DD HH:MI AM'), 2008, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3012, TO_DATE('2023-08-16 11:30 AM', 'YYYY-MM-DD HH:MI AM'), 1018, 1016)
+    VALUES (3012, TO_DATE('2023-08-16 11:30 AM', 'YYYY-MM-DD HH:MI AM'), 2015, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3013, TO_DATE('2023-08-17 2:45 PM', 'YYYY-MM-DD HH:MI AM'), 1019, 1016)
+    VALUES (3013, TO_DATE('2023-08-17 2:45 PM', 'YYYY-MM-DD HH:MI AM'), 2001, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3014, TO_DATE('2023-08-18 9:45 AM', 'YYYY-MM-DD HH:MI AM'), 1013, 1016)
+    VALUES (3014, TO_DATE('2023-08-18 9:45 AM', 'YYYY-MM-DD HH:MI AM'), 2002, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
-    VALUES (3015, TO_DATE('2023-08-19 4:50 PM', 'YYYY-MM-DD HH:MI AM'), 1006, 1016)
+    VALUES (3015, TO_DATE('2023-08-19 4:50 PM', 'YYYY-MM-DD HH:MI AM'), 2003, 1016)
 SELECT * FROM dual;
+
 
 
 INSERT ALL
@@ -342,12 +358,18 @@ INSERT ALL
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3004, 2002, 'Take 1 tablet twice a day for itch relief.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3004, 2012, 'Give 1 tablet as needed for vomiting or nausea.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3005, 2006, 'Give 1 tablet twice a day for bacterial infection.')
-    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3005, 2015, 'Administer 1 capsule daily for calming effect.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3005, 2014, 'Administer 1 capsule daily for calming effect.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3006, 2007, 'Take 1 tablet in the morning and 1 tablet in the evening for inflammation.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3007, 2003, 'Apply 1 topical solution once a month for heartworm and parasite prevention.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3008, 2001, 'Take 1 tablet three times a day after meals.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3009, 2004, 'Take 1 capsule twice a day as needed for pain relief.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3010, 2010, 'Administer 1 injection before travel to help with motion sickness.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3011, 2009, 'Give 1 tablet daily for joint pain.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3012, 2002, 'Take 1 tablet twice a day for itch relief.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3013, 2002, 'Take 1 tablet twice a day for itch relief.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3014, 2012, 'Give 1 tablet as needed for vomiting or nausea.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3015, 2002, 'Take 1 tablet twice a day for itch relief.')
+    INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3015, 2012, 'Give 1 tablet as needed for vomiting or nausea.')
 SELECT * FROM DUAL;
 
 
