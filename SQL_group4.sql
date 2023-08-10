@@ -14,6 +14,7 @@ Harsh Pahurkar, 115587222
 
 
 --To be deleted
+
 DROP TABLE xPrescriptionDetails     CASCADE CONSTRAINTS;
 DROP TABLE xPrescriptions           CASCADE CONSTRAINTS;
 DROP TABLE xMedications             CASCADE CONSTRAINTS;
@@ -149,7 +150,7 @@ CREATE TABLE xInvoices (
 CREATE TABLE xInvoiceDetails (
     lineNumber          NUMBER(2),
     invoiceId           NUMBER(5),
-    procedureId         NUMBER(3),
+    procedureId         NUMBER(4),
     medicationId        NUMBER(5),
     pricePaid           DECIMAL(8, 2)       NOT NULL, 
     PRIMARY KEY (lineNumber, invoiceId),
