@@ -80,15 +80,15 @@ CREATE TABLE xEmployees (
 
 
 CREATE TABLE xVeterinarians (
-    dvmId               NUMBER(4)        PRIMARY KEY,
+    dvmId               NUMBER(4)           PRIMARY KEY,
     dvmLicence          CHAR(10)            NOT NULL,
     FOREIGN KEY (dvmId) REFERENCES xEmployees(employeeId)
 );
 
 CREATE TABLE xProcedures (
-    procedureId         NUMBER(3)           PRIMARY KEY,
+    procedureId         NUMBER(4)           PRIMARY KEY,
     procedureName       VARCHAR2(50)        NOT NULL,
-    employeeId          NUMBER(4)        NOT NULL,      
+        employeeId          NUMBER(4)       NOT NULL,      
     currentServiceRate  DECIMAL(8, 2)       NOT NULL,
     FOREIGN KEY (employeeId) REFERENCES xEmployees(employeeId)
 );
@@ -102,7 +102,7 @@ CREATE TABLE xAppointments (
 
 CREATE TABLE xAppointmentsDetails (
     appointmentDateTime     DATE,
-    procedureId             NUMBER(3)       NOT NULL,
+    procedureId             NUMBER(4)       NOT NULL,
     reasonForAppointment    VARCHAR(100),
     PRIMARY KEY (appointmentDateTime, procedureId),
     FOREIGN KEY (procedureId) REFERENCES xProcedures(procedureId)
@@ -110,20 +110,20 @@ CREATE TABLE xAppointmentsDetails (
 
 
 CREATE TABLE xMedications (
-    medId               NUMBER(5)       PRIMARY KEY,
-    medName             VARCHAR(100)    NOT NULL,
-    medClass            VARCHAR(50)     NOT NULL,
-    medType             VARCHAR(50)     NOT NULL,
-    brand               VARCHAR(35)     NOT NULL,
-    buyPrice            DECIMAL(5,2)    NOT NULL
+    medId               NUMBER(5)           PRIMARY KEY,
+    medName             VARCHAR(100)        NOT NULL,
+    medClass            VARCHAR(50)         NOT NULL,
+    medType             VARCHAR(50)         NOT NULL,
+    brand               VARCHAR(35)         NOT NULL,
+    buyPrice            DECIMAL(5,2)        NOT NULL
 );
 
 
 CREATE TABLE xPrescriptions (
-    prescriptionId      NUMBER(5)       PRIMARY KEY,
-    appointmentDateTime DATE            NOT NULL,
-    patientId           NUMBER(4)       NOT NULL,
-    dvmId               NUMBER(4)       NOT NULL,
+    prescriptionId      NUMBER(5)           PRIMARY KEY,
+    appointmentDateTime DATE                NOT NULL,
+    patientId           NUMBER(4)           NOT NULL,
+    dvmId               NUMBER(4)           NOT NULL,
     FOREIGN KEY (patientId) REFERENCES xPatients(patientId),
     FOREIGN KEY (dvmId)     REFERENCES xVeterinarians(dvmId)
 );
@@ -132,7 +132,7 @@ CREATE TABLE xPrescriptions (
 CREATE TABLE xPrescriptionDetails (
     prescriptionId      NUMBER(5),
     medId               NUMBER(5),
-    notes               VARCHAR(100)    NOT NULL,
+    notes               VARCHAR(100)        NOT NULL,
     PRIMARY KEY (prescriptionId, medId),
     FOREIGN KEY (prescriptionId)        REFERENCES xPrescriptions(prescriptionId),
     FOREIGN KEY (medId)                 REFERENCES xMedications(medId)
@@ -140,9 +140,9 @@ CREATE TABLE xPrescriptionDetails (
 
 
 CREATE TABLE xInvoices (
-    invoiceId           NUMBER(5)       PRIMARY KEY,
-    patientId           NUMBER(4)       NOT NULL,
-    dateAndTime         DATE            NOT NULL,
+    invoiceId           NUMBER(5)           PRIMARY KEY,
+    patientId           NUMBER(4)           NOT NULL,
+    dateAndTime         DATE                NOT NULL,
     FOREIGN KEY (patientId) REFERENCES xPatients(patientId)
 );
 
@@ -151,7 +151,7 @@ CREATE TABLE xInvoiceDetails (
     invoiceId           NUMBER(5),
     procedureId         NUMBER(3),
     medicationId        NUMBER(5),
-    pricePaid           DECIMAL(8, 2)   NOT NULL, 
+    pricePaid           DECIMAL(8, 2)       NOT NULL, 
     PRIMARY KEY (lineNumber, invoiceId),
     FOREIGN KEY (invoiceId)     REFERENCES xInvoices(invoiceId),
     FOREIGN KEY (medicationId)  REFERENCES xMedications(medId)
