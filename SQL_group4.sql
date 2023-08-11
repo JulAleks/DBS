@@ -91,7 +91,7 @@ CREATE TABLE xVeterinarians (
 CREATE TABLE xProcedures (
     procedureId         NUMBER(4)           PRIMARY KEY,
     procedureName       VARCHAR2(50)        NOT NULL,
-        employeeId          NUMBER(4)       NOT NULL,      
+    employeeId          NUMBER(4)       NOT NULL,      
     currentServiceRate  DECIMAL(8, 2)       NOT NULL,
     FOREIGN KEY (employeeId) REFERENCES xEmployees(employeeId)
 );
@@ -104,7 +104,7 @@ CREATE TABLE xAppointments (
 );
 
 CREATE TABLE xAppointmentsDetails (
-    appointmentDateTime     DATE,
+    apptDateTime            DATE,
     procedureId             NUMBER(4)       NOT NULL,
     reasonForAppointment    VARCHAR(100),
     PRIMARY KEY (appointmentDateTime, procedureId),
@@ -437,42 +437,42 @@ SELECT * FROM dual;
 
 
 INSERT ALL
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4003)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4004)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4006)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4007)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4008)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4009)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4010)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-05 2:00 PM', 'YYYY-MM-DD HH:MI PM'), 4011)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-10 11:30 AM', 'YYYY-MM-DD HH:MI AM'), 4012)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-15 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4013)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-20 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4014)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-25 12:00 PM', 'YYYY-MM-DD HH:MI PM'), 4015)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4016)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4017)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4018)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4019)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4020)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-06 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4021)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-07 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4022)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-08 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4023)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-09 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4024)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-10 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-11 2:00 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-12 11:30 AM', 'YYYY-MM-DD HH:MI AM'), 4003)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-13 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4004)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-14 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4003)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4004)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4006)
-    INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4007)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4003)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4004)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4006)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4007)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4008)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4009)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-04-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4010)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-05 2:00 PM', 'YYYY-MM-DD HH:MI PM'), 4011)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-10 11:30 AM', 'YYYY-MM-DD HH:MI AM'), 4012)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-15 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4013)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-20 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4014)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-05-25 12:00 PM', 'YYYY-MM-DD HH:MI PM'), 4015)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4016)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4017)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4018)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4019)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-06-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4020)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-06 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4021)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-07 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4022)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-08 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4023)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-07-09 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4024)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-10 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-11 2:00 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-12 11:30 AM', 'YYYY-MM-DD HH:MI AM'), 4003)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-13 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4004)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-08-14 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-15 11:15 AM', 'YYYY-MM-DD HH:MI AM'), 4003)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-20 3:45 PM', 'YYYY-MM-DD HH:MI PM'), 4004)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4006)
+    INTO xAppointmentsDetails (apptDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4007)
 SELECT * FROM dual;
 
 
@@ -643,6 +643,7 @@ SELECT * FROM dual;
 DROP VIEW xEmployeeOwnedPatients;
 DROP VIEW xPetWithoutAppointments;
 DROP VIEW xAppointmentsForPatient2011;
+DROP VIEW xAppointmentForEmployee;
 
 
 -- VIEW 1: Show pets that belong to employees
@@ -699,3 +700,26 @@ ORDER BY p.patientId;
 
 -- VIEW 3 results: 
 SELECT * FROM xAppointmentsForPatient2011;
+
+
+-- View 4: Show appointments for a specific employees (i.e. employeeID = 1016)
+CREATE VIEW xAppointmentForEmployee AS
+SELECT
+    e.employeeId,
+    ppl.firstName || ' ' || ppl.lastName AS employeeName,
+    a.appointmentId,
+    TO_CHAR(a.apptDateTime, 'DD/MM/YYYY') AS formatted_date,
+    TO_CHAR(a.apptDateTime, 'HH24:MI') AS formatted_time,
+    pet.patientId,
+    pet.patientName,
+    pet.animalType
+FROM xPeople ppl
+    FULL OUTER JOIN xEmployees e               ON ppl.personId = e.employeeId
+    FULL OUTER JOIN xProcedures pcd            ON e.employeeId = pcd.employeeId
+    FULL OUTER JOIN xAppointmentsDetails ad    ON pcd.procedureID = ad.procedureID
+    FULL OUTER JOIN xAppointments a            ON ad.appointmentDateTime = a.apptDateTime
+    FULL OUTER JOIN xPatients pet              ON a.patientId = pet.patientId
+WHERE e.employeeId = 1016;
+
+-- VIEW 4 results: 
+SELECT * FROM xAppointmentForEmployee;
