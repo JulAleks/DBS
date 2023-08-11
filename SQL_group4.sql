@@ -107,7 +107,7 @@ CREATE TABLE xAppointmentsDetails (
     apptDateTime            DATE,
     procedureId             NUMBER(4)       NOT NULL,
     reasonForAppointment    VARCHAR(100),
-    PRIMARY KEY (appointmentDateTime, procedureId),
+    PRIMARY KEY (apptDateTime, procedureId),
     FOREIGN KEY (procedureId) REFERENCES xProcedures(procedureId)
 );
 
@@ -717,7 +717,7 @@ FROM xPeople ppl
     FULL OUTER JOIN xEmployees e               ON ppl.personId = e.employeeId
     FULL OUTER JOIN xProcedures pcd            ON e.employeeId = pcd.employeeId
     FULL OUTER JOIN xAppointmentsDetails ad    ON pcd.procedureID = ad.procedureID
-    FULL OUTER JOIN xAppointments a            ON ad.appointmentDateTime = a.apptDateTime
+    FULL OUTER JOIN xAppointments a            ON ad.apptDateTime = a.apptDateTime
     FULL OUTER JOIN xPatients pet              ON a.patientId = pet.patientId
 WHERE e.employeeId = 1016;
 
