@@ -637,3 +637,61 @@ INSERT ALL
     VALUES (3, 9019, 4004, 2004, 90.00) 
 SELECT * FROM DUAL;
 
+
+CREATE VIEW xEmployeeOwnedPatients AS
+SELECT
+    p.patientId,
+    p.patientName,
+    p.animalType,
+    owner.firstName || ' ' || owner.lastName AS ownerFullName,
+    e.empPosition   
+FROM
+    xPatients p
+JOIN
+    xPeople owner ON p.ownerId = owner.personId
+JOIN
+    xEmployees e ON owner.personId = e.employeeId;
+
+
+CREATE VIEW xPetWithoutAppointments AS
+SELECT
+    p.patientId,
+    p.patientName,
+    p.animalType,
+    owner.firstName || ' ' || owner.lastName AS ownerName,
+    ph.phoneNum AS ownerPhone
+FROM
+    xPatients p
+LEFT JOIN
+    xAppointments a ON p.patientId = a.patientId AND EXTRACT(YEAR FROM a.apptDateTime) = 2024
+JOIN
+    xPeople owner ON p.ownerId = owner.personId
+LEFT JOIN
+    xPhones ph ON owner.personId = ph.personId
+WHERE
+    a.appointmentId IS NULL;
+
+   
+CREATE VIEW AppointmentsForPatient2011 AS
+SELECT
+    a.appointmentId,
+    a.apptDateTime,
+    p.patientId,
+    p.patientName,
+    p.animalType,
+    owner.firstName || ' ' || owner.lastName AS ownerName
+FROM
+    xAppointments a
+JOIN
+    xPatients p ON a.patientId = p.patientId
+JOIN
+    xPeople owner ON p.ownerId = owner.personId
+WHERE
+    p.patientId = 2011;
+
+
+
+
+
+
+
