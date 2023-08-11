@@ -160,50 +160,48 @@ CREATE TABLE xInvoiceDetails (
 
 
 
-INSERT ALL 
+INSERT ALL
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1001, 'Smith', 'John', '1985-05-10', 'john.smith@google.com', '123 Main St', 'Toronto', 'ON', 'M5V2T6')
+VALUES (1001, 'Smith', 'John', TO_DATE('1985-05-10', 'YYYY-MM-DD'), 'john.smith@google.com', '123 Main St', 'Toronto', 'ON', 'M5V2T6')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1002, 'Doe', 'Jane', '1990-08-15', 'jane.doe@hotmail.com', '456 Oak Ave', 'Ottawa', 'ON', 'K1P 5G4')
+VALUES (1002, 'Doe', 'Jane', TO_DATE('1990-08-15', 'YYYY-MM-DD'), 'jane.doe@hotmail.com', '456 Oak Ave', 'Ottawa', 'ON', 'K1P 5G4')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1003, 'Johnson', 'Michael', '1978-12-03', 'michael.johnson@google.com', '789 Elm Rd', 'Hamilton', 'ON', 'L8P1H6')
+VALUES (1003, 'Johnson', 'Michael', TO_DATE('1978-12-03', 'YYYY-MM-DD'), 'michael.johnson@google.com', '789 Elm Rd', 'Hamilton', 'ON', 'L8P1H6')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1004, 'Williams', 'Emily', '1989-07-22', 'emily.williams@hotmail.com', '101 Pine Ln', 'London', 'ON', 'N6A1R5')
+VALUES (1004, 'Williams', 'Emily', TO_DATE('1989-07-22', 'YYYY-MM-DD'), 'emily.williams@hotmail.com', '101 Pine Ln', 'London', 'ON', 'N6A1R5')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1005, 'Brown', 'Daniel', '1995-04-17', 'daniel.brown@google.com', '222 Maple Dr', 'Mississauga', 'ON', 'L5B4M7')
+VALUES (1005, 'Brown', 'Daniel', TO_DATE('1995-04-17', 'YYYY-MM-DD'), 'daniel.brown@google.com', '222 Maple Dr', 'Mississauga', 'ON', 'L5B4M7')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1006, 'Miller', 'Sarah', '1982-09-28', 'sarah.miller@hotmail.com', '333 Birch St', 'Brampton', 'ON', 'L6T0E2')
+VALUES (1006, 'Miller', 'Sarah', TO_DATE('1982-09-28', 'YYYY-MM-DD'), 'sarah.miller@hotmail.com', '333 Birch St', 'Brampton', 'ON', 'L6T0E2')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1007, 'Davis', 'William', '1992-02-08', 'william.davis@google.com', '444 Cedar Ave', 'Markham', 'ON', 'L3R8B7')
+VALUES (1007, 'Davis', 'William', TO_DATE('1992-02-08', 'YYYY-MM-DD'), 'william.davis@google.com', '444 Cedar Ave', 'Markham', 'ON', 'L3R8B7')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1008, 'Martinez', 'Olivia', '1987-11-12', 'olivia.martinez@hotmail.com', '555 Willow Rd', 'Vaughan', 'ON', 'L4J7Y6')
+VALUES (1008, 'Martinez', 'Olivia', TO_DATE('1987-11-12', 'YYYY-MM-DD'), 'olivia.martinez@hotmail.com', '555 Willow Rd', 'Vaughan', 'ON', 'L4J7Y6')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1009, 'Rodriguez', 'James', '1976-06-30', 'james.rodriguez@google.com', '666 Oak St', 'Richmond Hill', 'ON', 'L4C0L8')
+VALUES (1009, 'Rodriguez', 'James', TO_DATE('1976-06-30', 'YYYY-MM-DD'), 'james.rodriguez@google.com', '666 Oak St', 'Richmond Hill', 'ON', 'L4C0L8')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1010, 'Lee', 'Emma', '1998-03-25', 'emma.lee@hotmail.com', '777 Elm Ave', 'Oakville', 'ON', 'L6H 6P9')
+VALUES (1010, 'Lee', 'Emma', TO_DATE('1998-03-25', 'YYYY-MM-DD'), 'emma.lee@hotmail.com', '777 Elm Ave', 'Oakville', 'ON', 'L6H 6P9')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1011, 'Thompson', 'Alexander', '1984-10-19', 'alexander.thompson@google.com', '888 Maple Ln', 'Burlington', 'ON', 'L7R2L8')
+VALUES (1011, 'Thompson', 'Alexander', TO_DATE('1984-10-19', 'YYYY-MM-DD'), 'alexander.thompson@google.com', '888 Maple Ln', 'Burlington', 'ON', 'L7R2L8')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1012, 'Scott', 'Mia', '1991-01-06', 'mia.scott@hotmail.com', '999 Pine Rd', 'Oshawa', 'ON', 'L1H7K5')
+VALUES (1012, 'Scott', 'Mia', TO_DATE('1991-01-06', 'YYYY-MM-DD'), 'mia.scott@hotmail.com', '999 Pine Rd', 'Oshawa', 'ON', 'L1H7K5')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1013, 'Hall', 'Benjamin', '1980-05-14', 'benjamin.hall@google.com', '111 Birch Dr', 'Whitby', 'ON', 'L1N8X1')
+VALUES (1013, 'Hall', 'Benjamin', TO_DATE('1980-05-14', 'YYYY-MM-DD'), 'benjamin.hall@google.com', '111 Birch Dr', 'Whitby', 'ON', 'L1N8X1')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1014, 'Young', 'Amelia', '1986-08-09', 'amelia.young@hotmail.com', '222 Oak St', 'Ajax', 'ON', 'L1S2V8')
+VALUES (1014, 'Young', 'Amelia', TO_DATE('1986-08-09', 'YYYY-MM-DD'), 'amelia.young@hotmail.com', '222 Oak St', 'Ajax', 'ON', 'L1S2V8')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1015, 'Lopez', 'Ethan', '1997-07-11', 'ethan.lopez@google.com', '333 Maple Ave', 'Pickering', 'ON', 'L1W3T7')
+VALUES (1015, 'Lopez', 'Ethan', TO_DATE('1997-07-11', 'YYYY-MM-DD'), 'ethan.lopez@google.com', '333 Maple Ave', 'Pickering', 'ON', 'L1W3T7')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1016, 'Adams', 'Sofia', '1979-09-29', 'sofia.adams@hotmail.com', '444 Elm Rd', 'Milton', 'ON', 'L9T3N5')
+VALUES (1016, 'Adams', 'Sofia', TO_DATE('1979-09-29', 'YYYY-MM-DD'), 'sofia.adams@hotmail.com', '444 Elm Rd', 'Milton', 'ON', 'L9T3N5')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1017, 'Lewis', 'Matthew', '1993-02-14', 'matthew.lewis@google.com', '555 Cedar St', 'Newmarket', 'ON', 'L3Y1R6')
+VALUES (1017, 'Lewis', 'Matthew', TO_DATE('1993-02-14', 'YYYY-MM-DD'), 'matthew.lewis@google.com', '555 Cedar St', 'Newmarket', 'ON', 'L3Y1R6')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1018, 'King', 'Ava', '1988-12-02', 'ava.king@hotmail.com', '666 Willow Ave', 'Aurora', 'ON', 'L4G3L8')
+VALUES (1018, 'King', 'Ava', TO_DATE('1988-12-02', 'YYYY-MM-DD'), 'ava.king@hotmail.com', '666 Willow Ave', 'Aurora', 'ON', 'L4G3L8')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1019, 'Powell', 'Alexander', '1977-06-25', 'alexander.powell@google.com', '777 Birch Dr', 'Ajax', 'ON', 'L1S2V8')
+VALUES (1019, 'Powell', 'Alexander', TO_DATE('1977-06-25', 'YYYY-MM-DD'), 'alexander.powell@google.com', '777 Birch Dr', 'Ajax', 'ON', 'L1S2V8')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
-VALUES (1020, 'Turner', 'Charlotte', '1994-03-18', 'charlotte.turner@hotmail.com', '888 Oak St', 'Markham', 'ON', 'L3R8B7')
-SELECT * FROM dual;
-
-
+VALUES (1020, 'Turner', 'Charlotte', TO_DATE('1994-03-18', 'YYYY-MM-DD'), 'charlotte.turner@hotmail.com', '888 Oak St', 'Markham', 'ON', 'L3R8B7')
+SELECT * FROM DUAL;
 
 
 INSERT ALL
@@ -227,7 +225,8 @@ INTO xPhones (phoneNum, personId, phoneType) VALUES ('808-080-8080', 1017, 'Home
 INTO xPhones (phoneNum, personId, phoneType) VALUES ('909-090-9090', 1018, 'Mobile')
 INTO xPhones (phoneNum, personId, phoneType) VALUES ('123-456-7890', 1019, 'Home')
 INTO xPhones (phoneNum, personId, phoneType) VALUES ('987-654-3210', 1020, 'Mobile')
-SELECT * FROM dual;
+SELECT * FROM DUAL;
+
 
 INSERT ALL 
     INTO xPatients (patientId, patientName, animalType, breed, dob, sex, isFixed, isMicrochipped, microchip, ownerId)
@@ -260,7 +259,7 @@ INSERT ALL
     VALUES (2014, 'Luna', 'Cat', 'Scottish Fold', TO_DATE('2019-11-20', 'YYYY-MM-DD'), 'F', 'Y', 'Y', 'KLM789', 1014)   
     INTO xPatients (patientId, patientName, animalType, breed, dob, sex, isFixed, isMicrochipped, microchip, ownerId)
     VALUES (2015, 'Bella', 'Dog', 'Shih Tzu', TO_DATE('2017-12-05', 'YYYY-MM-DD'), 'F', 'N', 'N', 'N/A', 1015)
-SELECT * FROM dual;
+SELECT * FROM DUAL;
 
 
 INSERT ALL
@@ -276,8 +275,7 @@ INTO xEmployees (employeeId, sin, userName, userPassword, empPosition, currentHo
 VALUES (1020, '654321789', 'tech_sarah', 'tech@s23', 'Vet Technician', 30.00)
 INTO xEmployees (employeeId, sin, userName, userPassword, empPosition, currentHourlyPay)
 VALUES (1011, '321789654', 'tech_david', 'tech@d23', 'Vet Technician', 30.00)
-SELECT * FROM dual;
-
+SELECT * FROM DUAL;
 
 
 INSERT INTO xVeterinarians (dvmId, dvmLicence)
@@ -313,7 +311,7 @@ INSERT ALL
     VALUES (2013, 'Heartgard Plus', 'Heartworm Preventative', 'Chewable', 'Merial', 16.35)
     INTO xMedications (medId, medName, medClass, medType, brand, buyPrice)
     VALUES (2014, 'Ciprofloxacin', 'Antibiotic', 'Tablet', 'Cipro', 14.50)
-SELECT * FROM dual;
+SELECT * FROM DUAL;
 
 
 INSERT ALL
@@ -347,8 +345,7 @@ INSERT ALL
     VALUES (3014, TO_DATE('2023-08-18 9:45 AM', 'YYYY-MM-DD HH:MI AM'), 2002, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
     VALUES (3015, TO_DATE('2023-08-19 4:50 PM', 'YYYY-MM-DD HH:MI AM'), 2003, 1016)
-SELECT * FROM dual;
-
+SELECT * FROM DUAL;
 
 
 INSERT ALL
@@ -436,7 +433,6 @@ INSERT ALL
 SELECT * FROM DUAL;
 
 
-
 INSERT ALL
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4001)
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2023-03-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4002)
@@ -475,6 +471,7 @@ INSERT ALL
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4006)
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4007)
 SELECT * FROM DUAL;
+
 
 INSERT ALL
     INTO xInvoices (invoiceId, patientId, dateAndTime)
@@ -581,7 +578,7 @@ INSERT ALL
     VALUES (2, 9010, 4006, NULL, 80.00)
     INTO xInvoiceDetails (lineNumber, invoiceId, procedureId, medicationId, pricePaid)
     VALUES (3, 9010, NULL, 2006, 65.00)
-        INTO xInvoiceDetails (lineNumber, invoiceId, procedureId, medicationId, pricePaid)
+    INTO xInvoiceDetails (lineNumber, invoiceId, procedureId, medicationId, pricePaid)
     VALUES (1, 9011, 4001, 2001, 50.00) 
     INTO xInvoiceDetails (lineNumber, invoiceId, procedureId, medicationId, pricePaid)
     VALUES (2, 9011, 4002, NULL, 75.00)
