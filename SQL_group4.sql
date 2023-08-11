@@ -13,8 +13,7 @@ Harsh Pahurkar, 115587222
 ********************************************/
 
 
---To be deleted
-
+-- Delete tables if any mistakes occur
 DROP TABLE xPrescriptionDetails     CASCADE CONSTRAINTS;
 DROP TABLE xPrescriptions           CASCADE CONSTRAINTS;
 DROP TABLE xMedications             CASCADE CONSTRAINTS;
@@ -28,6 +27,9 @@ DROP TABLE xInvoices                CASCADE CONSTRAINTS;
 DROP TABLE xPhones                  CASCADE CONSTRAINTS;
 DROP TABLE xPeople                  CASCADE CONSTRAINTS;
 DROP TABLE xProcedures              CASCADE CONSTRAINTS;
+
+
+/*** CREATION SCRIPT: Create all tables ***/
 
 CREATE TABLE xPeople (
     personId        NUMBER(4)                       PRIMARY KEY,
@@ -159,6 +161,7 @@ CREATE TABLE xInvoiceDetails (
 ); 
 
 
+/*** SAMPLE DATA SCRIPT ***/
 
 INSERT ALL
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
@@ -635,6 +638,10 @@ INSERT ALL
 SELECT * FROM DUAL;
 
 
+
+/*** VIEWS FOR BUSINESS REPORTS ***/
+
+-- View 1: Show pets that belong to employees
 CREATE VIEW xEmployeeOwnedPatients AS
 SELECT
     p.patientId,
@@ -650,6 +657,7 @@ JOIN
     xEmployees e ON owner.personId = e.employeeId;
 
 
+-- View 2: Show pets that do not have appointment next year
 CREATE VIEW xPetWithoutAppointments AS
 SELECT
     p.patientId,
@@ -668,7 +676,8 @@ LEFT JOIN
 WHERE
     a.appointmentId IS NULL;
 
-   
+
+-- View 3: Show appointments for a specific pet
 CREATE VIEW AppointmentsForPatient2011 AS
 SELECT
     a.appointmentId,
