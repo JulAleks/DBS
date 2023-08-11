@@ -638,7 +638,6 @@ INSERT ALL
 SELECT * FROM dual;
 
 
-
 /*** VIEWS FOR BUSINESS REPORTS ***/
 -- Drop views (just in case)
 DROP VIEW xEmployeeOwnedPatients;
@@ -700,6 +699,3 @@ ORDER BY p.patientId;
 
 -- VIEW 3 results: 
 SELECT * FROM xAppointmentsForPatient2011;
-
-
-
