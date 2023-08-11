@@ -204,7 +204,7 @@ INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, po
 VALUES (1019, 'Powell', 'Alexander', TO_DATE('1977-06-25', 'YYYY-MM-DD'), 'alexander.powell@google.com', '777 Birch Dr', 'Ajax', 'ON', 'L1S2V8')
 INTO xPeople (personId, lastName, firstName, dob, email, address, city, prov, postalCode)
 VALUES (1020, 'Turner', 'Charlotte', TO_DATE('1994-03-18', 'YYYY-MM-DD'), 'charlotte.turner@hotmail.com', '888 Oak St', 'Markham', 'ON', 'L3R8B7')
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -262,7 +262,7 @@ INSERT ALL
     VALUES (2014, 'Luna', 'Cat', 'Scottish Fold', TO_DATE('2019-11-20', 'YYYY-MM-DD'), 'F', 'Y', 'Y', 'KLM789', 1014)   
     INTO xPatients (patientId, patientName, animalType, breed, dob, sex, isFixed, isMicrochipped, microchip, ownerId)
     VALUES (2015, 'Bella', 'Dog', 'Shih Tzu', TO_DATE('2017-12-05', 'YYYY-MM-DD'), 'F', 'N', 'N', 'N/A', 1015)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -278,7 +278,7 @@ INTO xEmployees (employeeId, sin, userName, userPassword, empPosition, currentHo
 VALUES (1020, '654321789', 'tech_sarah', 'tech@s23', 'Vet Technician', 30.00)
 INTO xEmployees (employeeId, sin, userName, userPassword, empPosition, currentHourlyPay)
 VALUES (1011, '321789654', 'tech_david', 'tech@d23', 'Vet Technician', 30.00)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT INTO xVeterinarians (dvmId, dvmLicence)
@@ -314,7 +314,7 @@ INSERT ALL
     VALUES (2013, 'Heartgard Plus', 'Heartworm Preventative', 'Chewable', 'Merial', 16.35)
     INTO xMedications (medId, medName, medClass, medType, brand, buyPrice)
     VALUES (2014, 'Ciprofloxacin', 'Antibiotic', 'Tablet', 'Cipro', 14.50)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -348,7 +348,7 @@ INSERT ALL
     VALUES (3014, TO_DATE('2023-08-18 9:45 AM', 'YYYY-MM-DD HH:MI AM'), 2002, 1016)
     INTO xPrescriptions (prescriptionId, appointmentDateTime, patientId, dvmId)
     VALUES (3015, TO_DATE('2023-08-19 4:50 PM', 'YYYY-MM-DD HH:MI AM'), 2003, 1016)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -373,7 +373,7 @@ INSERT ALL
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3014, 2012, 'Give 1 tablet as needed for vomiting or nausea.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3015, 2002, 'Take 1 tablet twice a day for itch relief.')
     INTO xPrescriptionDetails (prescriptionId, medId, notes) VALUES (3015, 2012, 'Give 1 tablet as needed for vomiting or nausea.')
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -401,7 +401,7 @@ INSERT ALL
     INTO xProcedures (procedureId, procedureName, employeeId, currentServiceRate) VALUES (4022, 'Annual Exam Silver Package', 1016, 300.00)
     INTO xProcedures (procedureId, procedureName, employeeId, currentServiceRate) VALUES (4023, 'Puppy Initial Visit', 1016, 120.00)
     INTO xProcedures (procedureId, procedureName, employeeId, currentServiceRate) VALUES (4024, 'Puppy Second Visit', 1016, 100.00)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -433,7 +433,7 @@ INSERT ALL
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5226, TO_TIMESTAMP('2024-09-18 14:45:00', 'YYYY-MM-DD HH24:MI:SS'), 2013)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5227, TO_TIMESTAMP('2024-09-19 09:45:00', 'YYYY-MM-DD HH24:MI:SS'), 2014)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5228, TO_TIMESTAMP('2024-09-20 16:50:00', 'YYYY-MM-DD HH24:MI:SS'), 2015)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -473,7 +473,7 @@ INSERT ALL
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-03-25 9:30 AM', 'YYYY-MM-DD HH:MI AM'), 4005)
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-05 10:00 AM', 'YYYY-MM-DD HH:MI AM'), 4006)
     INTO xAppointmentsDetails (appointmentDateTime, procedureId) VALUES (TO_TIMESTAMP('2024-04-10 2:30 PM', 'YYYY-MM-DD HH:MI PM'), 4007)
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -517,7 +517,7 @@ INSERT ALL
     VALUES (9018, 2006, TO_TIMESTAMP('2023-05-11 12:00:00', 'YYYY-MM-DD HH24:MI:SS'))
     INTO xInvoices (invoiceId, patientId, dateAndTime)
     VALUES (9019, 2007, TO_TIMESTAMP('2023-05-12 16:20:00', 'YYYY-MM-DD HH24:MI:SS'))
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 INSERT ALL
@@ -635,7 +635,7 @@ INSERT ALL
     VALUES (2, 9019, NULL, 2002, 40.00)
     INTO xInvoiceDetails (lineNumber, invoiceId, procedureId, medicationId, pricePaid)
     VALUES (3, 9019, 4004, 2004, 90.00) 
-SELECT * FROM DUAL;
+SELECT * FROM dual;
 
 
 
@@ -656,8 +656,9 @@ SELECT
     e.empPosition   
 FROM xPatients p
     JOIN xPeople owner ON p.ownerId = owner.personId
-    JOIN xEmployees e ON owner.personId = e.employeeId;
-    
+    JOIN xEmployees e ON owner.personId = e.employeeId
+ORDER BY p.patientId;
+
 -- VIEW 1 results: 
 SELECT * FROM xEmployeeOwnedPatients;
 
@@ -674,17 +675,19 @@ FROM xPatients p
     LEFT JOIN xAppointments a ON p.patientId = a.patientId AND EXTRACT(YEAR FROM a.apptDateTime) = 2024
     JOIN xPeople owner ON p.ownerId = owner.personId
     LEFT JOIN xPhones ph ON owner.personId = ph.personId
-WHERE a.appointmentId IS NULL;
+WHERE a.appointmentId IS NULL
+ORDER BY p.patientId;
 
 -- VIEW 2 results: 
 SELECT * FROM xPetWithoutAppointments;
 
 
--- View 3: Show appointments for a specific pet
+-- View 3: Show appointments for a specific pet (i.e. patientID = 2011)
 CREATE VIEW xAppointmentsForPatient2011 AS
 SELECT
     a.appointmentId,
-    a.apptDateTime,
+    TO_CHAR(a.apptDateTime, 'DD/MM/YYYY') AS formatted_date, -- Changed
+    TO_CHAR(a.apptDateTime, 'HH24:MI') AS formatted_time, -- Changed
     p.patientId,
     p.patientName,
     p.animalType,
@@ -692,7 +695,8 @@ SELECT
 FROM xAppointments a
     JOIN xPatients p ON a.patientId = p.patientId
     JOIN xPeople owner ON p.ownerId = owner.personId
-WHERE p.patientId = 2011;
+WHERE p.patientId = 2011
+ORDER BY p.patientId;
 
 -- VIEW 3 results: 
 SELECT * FROM xAppointmentsForPatient2011;
