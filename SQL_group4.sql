@@ -13,6 +13,8 @@ Harsh Pahurkar, 115587222
 ********************************************/
 
 
+/*** CREATION SCRIPT: Create all tables ***/
+
 -- Delete tables if any mistakes occur
 DROP TABLE xPrescriptionDetails     CASCADE CONSTRAINTS;
 DROP TABLE xPrescriptions           CASCADE CONSTRAINTS;
@@ -28,8 +30,6 @@ DROP TABLE xPhones                  CASCADE CONSTRAINTS;
 DROP TABLE xPeople                  CASCADE CONSTRAINTS;
 DROP TABLE xProcedures              CASCADE CONSTRAINTS;
 
-
-/*** CREATION SCRIPT: Create all tables ***/
 
 CREATE TABLE xPeople (
     personId        NUMBER(4)                       PRIMARY KEY,
@@ -640,8 +640,13 @@ SELECT * FROM DUAL;
 
 
 /*** VIEWS FOR BUSINESS REPORTS ***/
+-- Drop views (just in case)
+DROP VIEW xEmployeeOwnedPatients;
+DROP VIEW xPetWithoutAppointments;
+DROP VIEW xAppointmentsForPatient2011;
 
--- View 1: Show pets that belong to employees
+
+-- VIEW 1: Show pets that belong to employees
 CREATE VIEW xEmployeeOwnedPatients AS
 SELECT
     p.patientId,
@@ -649,15 +654,15 @@ SELECT
     p.animalType,
     owner.firstName || ' ' || owner.lastName AS ownerFullName,
     e.empPosition   
-FROM
-    xPatients p
-JOIN
-    xPeople owner ON p.ownerId = owner.personId
-JOIN
-    xEmployees e ON owner.personId = e.employeeId;
+FROM xPatients p
+    JOIN xPeople owner ON p.ownerId = owner.personId
+    JOIN xEmployees e ON owner.personId = e.employeeId;
+    
+-- VIEW 1 results: 
+SELECT * FROM xEmployeeOwnedPatients;
 
 
--- View 2: Show pets that do not have appointment next year
+-- VIEW 2: Show pets that do not have appointment next year
 CREATE VIEW xPetWithoutAppointments AS
 SELECT
     p.patientId,
@@ -665,20 +670,18 @@ SELECT
     p.animalType,
     owner.firstName || ' ' || owner.lastName AS ownerName,
     ph.phoneNum AS ownerPhone
-FROM
-    xPatients p
-LEFT JOIN
-    xAppointments a ON p.patientId = a.patientId AND EXTRACT(YEAR FROM a.apptDateTime) = 2024
-JOIN
-    xPeople owner ON p.ownerId = owner.personId
-LEFT JOIN
-    xPhones ph ON owner.personId = ph.personId
-WHERE
-    a.appointmentId IS NULL;
+FROM xPatients p
+    LEFT JOIN xAppointments a ON p.patientId = a.patientId AND EXTRACT(YEAR FROM a.apptDateTime) = 2024
+    JOIN xPeople owner ON p.ownerId = owner.personId
+    LEFT JOIN xPhones ph ON owner.personId = ph.personId
+WHERE a.appointmentId IS NULL;
+
+-- VIEW 2 results: 
+SELECT * FROM xPetWithoutAppointments;
 
 
 -- View 3: Show appointments for a specific pet
-CREATE VIEW AppointmentsForPatient2011 AS
+CREATE VIEW xAppointmentsForPatient2011 AS
 SELECT
     a.appointmentId,
     a.apptDateTime,
@@ -686,18 +689,13 @@ SELECT
     p.patientName,
     p.animalType,
     owner.firstName || ' ' || owner.lastName AS ownerName
-FROM
-    xAppointments a
-JOIN
-    xPatients p ON a.patientId = p.patientId
-JOIN
-    xPeople owner ON p.ownerId = owner.personId
-WHERE
-    p.patientId = 2011;
+FROM xAppointments a
+    JOIN xPatients p ON a.patientId = p.patientId
+    JOIN xPeople owner ON p.ownerId = owner.personId
+WHERE p.patientId = 2011;
 
-
-
-
+-- VIEW 3 results: 
+SELECT * FROM xAppointmentsForPatient2011;
 
 
 
