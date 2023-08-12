@@ -17,20 +17,19 @@ Harsh Pahurkar, 115587222
 /*** CREATION SCRIPT: Create all tables ***/
 
 -- Delete tables if any mistakes occur
-DROP TABLE xPrescriptionDetails     CASCADE CONSTRAINTS;
-DROP TABLE xPrescriptions           CASCADE CONSTRAINTS;
-DROP TABLE xMedications             CASCADE CONSTRAINTS;
-DROP TABLE xVeterinarians           CASCADE CONSTRAINTS;
-DROP TABLE xEmployees               CASCADE CONSTRAINTS;
-DROP TABLE xPatients                CASCADE CONSTRAINTS;
-DROP TABLE xAppointmentsDetails     CASCADE CONSTRAINTS;
-DROP TABLE xAppointments            CASCADE CONSTRAINTS;
-DROP TABLE xInvoiceDetails          CASCADE CONSTRAINTS;
-DROP TABLE xInvoices                CASCADE CONSTRAINTS;
-DROP TABLE xPhones                  CASCADE CONSTRAINTS;
-DROP TABLE xPeople                  CASCADE CONSTRAINTS;
-DROP TABLE xProcedures              CASCADE CONSTRAINTS;
-
+DROP TABLE xPrescriptionDetails;
+DROP TABLE xPrescriptions;
+DROP TABLE xInvoiceDetails;
+DROP TABLE xInvoices;
+DROP TABLE xMedications;
+DROP TABLE xAppointmentsDetails;
+DROP TABLE xAppointments;
+DROP TABLE xProcedures;
+DROP TABLE xVeterinarians;
+DROP TABLE xEmployees;
+DROP TABLE xPatients;
+DROP TABLE xPhones;
+DROP TABLE xPeople;
 
 CREATE TABLE xPeople (
     personId        NUMBER(4)                       PRIMARY KEY,
@@ -226,29 +225,6 @@ INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('909-090-90
 INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('123-456-7890', 1019, 'Home', 'Y')
 INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('987-654-3210', 1020, 'Mobile', 'Y')
 SELECT * FROM DUAL;
-
--- INSERT ALL
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('111-111-1111', 1001, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('222-222-2222', 1002, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('333-333-3333', 1003, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('444-444-4444', 1004, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('555-555-5555', 1005, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('666-666-6666', 1006, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('777-777-7777', 1007, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('888-888-8888', 1008, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('999-999-9999', 1009, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('101-010-1010', 1010, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('202-020-2020', 1011, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('303-030-3030', 1012, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('404-040-4040', 1013, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('505-050-5050', 1014, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('606-060-6060', 1015, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('707-070-7070', 1016, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('808-080-8080', 1017, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('909-090-9090', 1018, 'Mobile')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('123-456-7890', 1019, 'Home')
--- INTO xPhones (phoneNum, personId, phoneType) VALUES ('987-654-3210', 1020, 'Mobile')
--- SELECT * FROM DUAL;
 
 
 INSERT ALL 
@@ -692,7 +668,7 @@ FROM xPatients p
     LEFT JOIN xAppointments a ON p.patientId = a.patientId AND EXTRACT(YEAR FROM a.apptDateTime) = 2024
     JOIN xPeople owner ON p.ownerId = owner.personId
     LEFT JOIN xPhones ph ON owner.personId = ph.personId
-WHERE a.appointmentId IS NULL AND UPPER(ph.preferredPhone) = 'Y' --new
+WHERE a.appointmentId IS NULL AND UPPER(ph.preferredPhone) = 'Y' 
 ORDER BY p.patientId;
 
 -- VIEW 2 results: 
@@ -703,8 +679,8 @@ SELECT * FROM xPetWithoutAppointments;
 CREATE VIEW xAppointmentsForPatient2011 AS
 SELECT
     a.appointmentId,
-    TO_CHAR(a.apptDateTime, 'DD/MM/YYYY') AS formatted_date, -- Changed
-    TO_CHAR(a.apptDateTime, 'HH24:MI') AS formatted_time, -- Changed
+    TO_CHAR(a.apptDateTime, 'DD/MM/YYYY') AS formatted_date, 
+    TO_CHAR(a.apptDateTime, 'HH24:MI') AS formatted_time, 
     p.patientId,
     p.patientName,
     p.animalType,
