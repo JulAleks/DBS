@@ -9,7 +9,7 @@ Ka Ying Chan, 123231227
 Prabhjot Singh Longia, 172569212
 Harsh Pahurkar, 115587222
 -----------------------
-2023-08-10
+2023-08-11
 ********************************************/
 
 
@@ -417,7 +417,7 @@ INSERT ALL
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5209, TO_TIMESTAMP('2022-09-12 16:20:00', 'YYYY-MM-DD HH24:MI:SS'), 2007)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5210, TO_TIMESTAMP('2022-09-09 15:45:00', 'YYYY-MM-DD HH24:MI:SS'), 2004)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5211, TO_TIMESTAMP('2022-09-10 09:30:00', 'YYYY-MM-DD HH24:MI:SS'), 2005)
-    INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5212, TO_TIMESTAMP('2023-09-11 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 2006)
+    INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5212, TO_TIMESTAMP('2023-09-11 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 2001)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5213, TO_TIMESTAMP('2023-09-12 16:20:00', 'YYYY-MM-DD HH24:MI:SS'), 2007)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5214, TO_TIMESTAMP('2023-09-06 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 2001)
     INTO xAppointments (appointmentId, apptDateTime, patientId) VALUES (5215, TO_TIMESTAMP('2023-09-07 14:30:00', 'YYYY-MM-DD HH24:MI:SS'), 2002)
@@ -461,7 +461,7 @@ INSERT ALL
     INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5218, 4002)
     INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5219, 4003)
     INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5219, 4004)
-    INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5220, 4004)
+    INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5220, 4011)
     INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5221, 4010)
     INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5221, 4024)
     INTO xAppointmentsDetails (appointmentId, procedureId) VALUES (5222, 4023)
@@ -701,25 +701,26 @@ SELECT * FROM xAppointmentsForPatient2011;
 
 
 -- View 4: Show appointments for a specific employees (i.e. employeeID = 1016)
--- CREATE VIEW xAppointmentForEmployee AS
+CREATE VIEW xAppointmentForEmployee AS
 SELECT
     e.employeeId,
-    ppl.firstName || ' ' || ppl.lastName AS employeeName,
-    pcd.procedureID,
-    ad.procedureID,
-    a.appointmentId,
+    ppl.firstName || ' ' || ppl.lastName AS employee_Name,
+    pcd.procedurename,
     TO_CHAR(a.apptDateTime, 'YYYY-MM-DD') AS formatted_date,
     TO_CHAR(a.apptDateTime, 'HH24:MI:SS') AS formatted_time,
     pet.patientId,
     pet.patientName,
-    pet.animalType
+    pet.animalType,
+    owner.firstName || ' ' || owner.lastName AS owner_Name
 FROM xPeople ppl
-    FULL OUTER JOIN xEmployees e               ON ppl.personId = e.employeeId
-    FULL OUTER JOIN xProcedures pcd            ON e.employeeId = pcd.employeeId
-    FULL OUTER JOIN xAppointmentsDetails ad    ON pcd.procedureID = ad.procedureID
-    FULL OUTER JOIN xAppointments a            ON ad.appointmentId = a.appointmentId
-    FULL OUTER JOIN xPatients pet              ON a.patientId = pet.patientId
-WHERE e.employeeId = 1016;
+    JOIN xEmployees e               ON ppl.personId = e.employeeId
+    JOIN xProcedures pcd            ON e.employeeId = pcd.employeeId
+    JOIN xAppointmentsDetails ad    ON pcd.procedureID = ad.procedureID
+    JOIN xAppointments a            ON ad.appointmentId = a.appointmentId
+    JOIN xPatients pet              ON a.patientId = pet.patientId
+    JOIN xPeople owner              ON pet.ownerId = owner.personId
+WHERE e.employeeId = 1016
+ORDER BY apptDateTime;
 
 -- VIEW 4 results: 
 SELECT * FROM xAppointmentForEmployee;
