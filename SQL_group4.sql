@@ -48,6 +48,7 @@ CREATE TABLE xPhones (
     phoneNum        VARCHAR2(12),
     personId        NUMBER(4),
     phoneType       VARCHAR2(13),
+    preferredPhone  CHAR(1)     CHECK(preferredPhone IN ('Y', 'N')),    --added
     PRIMARY KEY (phoneNum, personId),
     FOREIGN KEY (personId) REFERENCES xPeople(personId)
 );
@@ -199,27 +200,55 @@ SELECT * FROM dual;
 
 
 INSERT ALL
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('111-111-1111', 1001, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('222-222-2222', 1002, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('333-333-3333', 1003, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('444-444-4444', 1004, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('555-555-5555', 1005, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('666-666-6666', 1006, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('777-777-7777', 1007, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('888-888-8888', 1008, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('999-999-9999', 1009, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('101-010-1010', 1010, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('202-020-2020', 1011, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('303-030-3030', 1012, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('404-040-4040', 1013, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('505-050-5050', 1014, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('606-060-6060', 1015, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('707-070-7070', 1016, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('808-080-8080', 1017, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('909-090-9090', 1018, 'Mobile')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('123-456-7890', 1019, 'Home')
-INTO xPhones (phoneNum, personId, phoneType) VALUES ('987-654-3210', 1020, 'Mobile')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('111-111-1111', 1001, 'Home', 'N')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('111-111-2222', 1001, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('222-222-2222', 1002, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('333-333-3333', 1003, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('444-444-4444', 1004, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('444-444-2222', 1004, 'Mobile', 'N')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('444-444-3333', 1004, 'Work', 'N')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('555-555-5555', 1005, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('666-666-6666', 1006, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('777-777-7777', 1007, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('888-888-8888', 1008, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('999-999-9999', 1009, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('101-010-1010', 1010, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('202-020-2020', 1011, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('303-030-3030', 1012, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('303-030-3032', 1012, 'Mobile', 'N')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('404-040-4040', 1013, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('505-050-5050', 1014, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('606-060-6060', 1015, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('707-070-7070', 1016, 'Mobile', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('808-080-8080', 1017, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('909-090-9090', 1018, 'Mobile', 'N')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('909-090-9082', 1018, 'Work', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('123-456-7890', 1019, 'Home', 'Y')
+INTO xPhones (phoneNum, personId, phoneType, preferredPhone) VALUES ('987-654-3210', 1020, 'Mobile', 'Y')
 SELECT * FROM DUAL;
+
+-- INSERT ALL
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('111-111-1111', 1001, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('222-222-2222', 1002, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('333-333-3333', 1003, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('444-444-4444', 1004, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('555-555-5555', 1005, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('666-666-6666', 1006, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('777-777-7777', 1007, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('888-888-8888', 1008, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('999-999-9999', 1009, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('101-010-1010', 1010, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('202-020-2020', 1011, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('303-030-3030', 1012, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('404-040-4040', 1013, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('505-050-5050', 1014, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('606-060-6060', 1015, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('707-070-7070', 1016, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('808-080-8080', 1017, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('909-090-9090', 1018, 'Mobile')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('123-456-7890', 1019, 'Home')
+-- INTO xPhones (phoneNum, personId, phoneType) VALUES ('987-654-3210', 1020, 'Mobile')
+-- SELECT * FROM DUAL;
 
 
 INSERT ALL 
@@ -663,7 +692,7 @@ FROM xPatients p
     LEFT JOIN xAppointments a ON p.patientId = a.patientId AND EXTRACT(YEAR FROM a.apptDateTime) = 2024
     JOIN xPeople owner ON p.ownerId = owner.personId
     LEFT JOIN xPhones ph ON owner.personId = ph.personId
-WHERE a.appointmentId IS NULL
+WHERE a.appointmentId IS NULL AND UPPER(ph.preferredPhone) = 'Y' --new
 ORDER BY p.patientId;
 
 -- VIEW 2 results: 
