@@ -16,7 +16,7 @@ Harsh Pahurkar, 115587222
 
 /*** CREATION SCRIPT: Create all tables ***/
 
--- Delete tables if any mistakes occur
+-- Drop all tables
 DROP TABLE xPrescriptionDetails;
 DROP TABLE xPrescriptions;
 DROP TABLE xInvoiceDetails;
@@ -47,7 +47,7 @@ CREATE TABLE xPhones (
     phoneNum        VARCHAR2(12),
     personId        NUMBER(4),
     phoneType       VARCHAR2(13),
-    preferredPhone  CHAR(1)     CHECK(preferredPhone IN ('Y', 'N')),    --added
+    preferredPhone  CHAR(1)     CHECK(preferredPhone IN ('Y', 'N')),   
     PRIMARY KEY (phoneNum, personId),
     FOREIGN KEY (personId) REFERENCES xPeople(personId)
 );
