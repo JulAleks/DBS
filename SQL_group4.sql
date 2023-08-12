@@ -1,5 +1,6 @@
 /********************************************
-MILESTONE 3 - GROUP 4 - 
+DBS211 NEE
+MILESTONE 3 - GROUP 4
 -----------------------
 MY FLUFFY PET
 Veterinary clinic
@@ -9,7 +10,7 @@ Ka Ying Chan, 123231227
 Prabhjot Singh Longia, 172569212
 Harsh Pahurkar, 115587222
 -----------------------
-2023-08-11
+2023-08-12
 ********************************************/
 
 
@@ -43,7 +44,6 @@ CREATE TABLE xPeople (
     postalCode      VARCHAR(8)                      NOT NULL
 );
 
-
 CREATE TABLE xPhones (
     phoneNum        VARCHAR2(12),
     personId        NUMBER(4),
@@ -51,8 +51,6 @@ CREATE TABLE xPhones (
     PRIMARY KEY (phoneNum, personId),
     FOREIGN KEY (personId) REFERENCES xPeople(personId)
 );
-
-
 
 CREATE TABLE xPatients (
     patientId       NUMBER(4)       PRIMARY KEY,
@@ -69,8 +67,6 @@ CREATE TABLE xPatients (
     CONSTRAINT fk_owner FOREIGN KEY (ownerId) REFERENCES xPeople(personId)
 );
 
-
-
 CREATE TABLE xEmployees (
     employeeId          NUMBER(4)       PRIMARY KEY,
     sin                 VARCHAR(50)     NOT NULL,
@@ -80,7 +76,6 @@ CREATE TABLE xEmployees (
     currentHourlyPay    DECIMAL(5,2)    NOT NULL,
     FOREIGN KEY (employeeId) REFERENCES xPeople(personId)
 );
-
 
 CREATE TABLE xVeterinarians (
     dvmId               NUMBER(4)           PRIMARY KEY,
@@ -106,12 +101,10 @@ CREATE TABLE xAppointments (
 CREATE TABLE xAppointmentsDetails (
     appointmentId           NUMBER(4)       NOT NULL,
     procedureId             NUMBER(4)       NOT NULL,
-    reasonForAppointment    VARCHAR(100),
     PRIMARY KEY (appointmentId, procedureId),
     FOREIGN KEY (appointmentId) REFERENCES xAppointments(appointmentId),
     FOREIGN KEY (procedureId) REFERENCES xProcedures(procedureId)
 );
-
 
 CREATE TABLE xMedications (
     medId               NUMBER(5)           PRIMARY KEY,
@@ -122,7 +115,6 @@ CREATE TABLE xMedications (
     buyPrice            DECIMAL(5,2)        NOT NULL
 );
 
-
 CREATE TABLE xPrescriptions (
     prescriptionId      NUMBER(5)           PRIMARY KEY,
     appointmentDateTime DATE                NOT NULL,
@@ -132,7 +124,6 @@ CREATE TABLE xPrescriptions (
     FOREIGN KEY (dvmId)     REFERENCES xVeterinarians(dvmId)
 );
 
-
 CREATE TABLE xPrescriptionDetails (
     prescriptionId      NUMBER(5),
     medId               NUMBER(5),
@@ -141,7 +132,6 @@ CREATE TABLE xPrescriptionDetails (
     FOREIGN KEY (prescriptionId)        REFERENCES xPrescriptions(prescriptionId),
     FOREIGN KEY (medId)                 REFERENCES xMedications(medId)
 );
-
 
 CREATE TABLE xInvoices (
     invoiceId           NUMBER(5)           PRIMARY KEY,
